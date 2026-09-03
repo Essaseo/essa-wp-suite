@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ESSA WP Suite\n"
-"POT-Creation-Date: 2026-09-03 11:33+0000\n"
+"POT-Creation-Date: 2026-09-03 16:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "Aktywna, ale serwer licencji nie odpowiada od 14 dni"
 msgstr ""
 
-#: essa-wp-suite.php:650
+#: essa-wp-suite.php:652
 msgid "Aktywne"
 msgstr ""
 
@@ -25,8 +25,8 @@ msgstr ""
 msgid "Aktywne tylko gdy zakres = \"Wybrane typy postów\"."
 msgstr ""
 
-#: essa-wp-suite.php:489
-#: essa-wp-suite.php:624
+#: essa-wp-suite.php:491
+#: essa-wp-suite.php:626
 msgid "Aktywny"
 msgstr ""
 
@@ -38,15 +38,31 @@ msgstr ""
 msgid "Aktywuj na tej domenie"
 msgstr ""
 
-#: essa-wp-suite.php:193
+#: includes/class-promo.php:52
+msgid "Audyt i plan prac za darmo, wycena do 24 h. Prowadzenie od 1500 zł netto miesięcznie, umowa 3 miesiące, potem miesięczne wypowiedzenie."
+msgstr ""
+
+#: essa-wp-suite.php:195
 msgid "Auto-cleanup co tydzień"
 msgstr ""
 
-#: essa-wp-suite.php:255
+#: includes/class-promo.php:88
+msgid "Bezpłatna konsultacja"
+msgstr ""
+
+#: includes/class-promo.php:182
+msgid "Bezpłatna konsultacja ESSA SEO"
+msgstr ""
+
+#: includes/class-promo.php:91
+msgid "Blog ESSA SEO"
+msgstr ""
+
+#: essa-wp-suite.php:257
 msgid "Blokada endpointu 403"
 msgstr ""
 
-#: essa-wp-suite.php:282
+#: essa-wp-suite.php:284
 msgid "Blokada popupów wtyczek"
 msgstr ""
 
@@ -66,7 +82,7 @@ msgstr ""
 msgid "Blokuj popupy i overlaye wtyczek (CSS)"
 msgstr ""
 
-#: essa-wp-suite.php:247
+#: essa-wp-suite.php:249
 msgid "Blokuje REST API i XML-RPC"
 msgstr ""
 
@@ -86,27 +102,31 @@ msgstr ""
 msgid "Brak uprawnień do instalacji wtyczek."
 msgstr ""
 
-#: essa-wp-suite.php:460
+#: essa-wp-suite.php:462
 msgid "Brak uprawnień."
 msgstr ""
 
-#: essa-wp-suite.php:500
+#: includes/class-promo.php:80
+msgid "Brakuje Ci funkcji? Piszemy moduły do ESSA WP Suite pod konkretne potrzeby: integracje, automatyzacje, własne raporty. Opisz, czego potrzebujesz, wycenimy do 24 h."
+msgstr ""
+
+#: essa-wp-suite.php:502
 msgid "Błąd połączenia AJAX."
 msgstr ""
 
-#: essa-wp-suite.php:491
+#: essa-wp-suite.php:493
 msgid "Błąd. Spróbuj ponownie."
 msgstr ""
 
-#: essa-wp-suite.php:498
+#: essa-wp-suite.php:500
 msgid "Błąd:"
 msgstr ""
 
-#: essa-wp-suite.php:254
+#: essa-wp-suite.php:256
 msgid "Całkowite wyłączenie XML-RPC. Blokuje brute-force przez xmlrpc.php."
 msgstr ""
 
-#: essa-wp-suite.php:281
+#: essa-wp-suite.php:283
 msgid "Chowa powiadomienia wtyczek do panelu w pasku admina. Błędy krytyczne zawsze widoczne."
 msgstr ""
 
@@ -122,28 +142,29 @@ msgstr ""
 msgid "Chowaj powiadomienia sukcesu (zielone)"
 msgstr ""
 
-#: essa-wp-suite.php:373
+#: essa-wp-suite.php:375
 msgid "Co filtrować?"
 msgstr ""
 
-#: essa-wp-suite.php:205
+#: essa-wp-suite.php:207
 msgid "Core major/minor osobno"
 msgstr ""
 
-#: essa-wp-suite.php:193
+#: essa-wp-suite.php:195
 msgid "Czyszczenie jednym kliknięciem"
 msgstr ""
 
-#: essa-wp-suite.php:192
+#: essa-wp-suite.php:194
 msgid "Czyści bazę: rewizje, wygasłe transjenty, auto-drafty, spam, osierocone meta."
 msgstr ""
 
-#: essa-wp-suite.php:341
-#: essa-wp-suite.php:529
+#: essa-wp-suite.php:343
+#: essa-wp-suite.php:531
+#: includes/class-promo.php:181
 msgid "Dashboard"
 msgstr ""
 
-#: essa-wp-suite.php:435
+#: essa-wp-suite.php:437
 msgid "Decimal (&#65;)"
 msgstr ""
 
@@ -151,7 +172,7 @@ msgstr ""
 msgid "Dezaktywuj / zmień klucz"
 msgstr ""
 
-#: essa-wp-suite.php:652
+#: essa-wp-suite.php:654
 msgid "Do odblokowania"
 msgstr ""
 
@@ -167,12 +188,16 @@ msgstr ""
 msgid "Domena"
 msgstr ""
 
-#: essa-wp-suite.php:446
+#: essa-wp-suite.php:448
 msgid "Domyślnie 100. Zwiększ, jeśli inne wtyczki nadpisują treść po kodowaniu."
 msgstr ""
 
 #: includes/class-maintenance.php:258
 msgid "Dozwolone: a, p, span, strong, em, br, ul, li i atrybuty href/class/target."
+msgstr ""
+
+#: includes/class-promo.php:85
+msgid "ESSA SEO"
 msgstr ""
 
 #: includes/class-updater.php:250
@@ -183,39 +208,47 @@ msgstr ""
 msgid "ESSA WP Suite Pro zainstalowane i aktywowane. Moduły Pro są już na dashboardzie."
 msgstr ""
 
-#: essa-wp-suite.php:217
+#: includes/class-promo.php:47
+msgid "ESSA WP Suite to narzędzia, których używamy na stronach klientów. Samą stronę też możemy wypozycjonować, zbudować albo obsłużyć jej reklamy."
+msgstr ""
+
+#: essa-wp-suite.php:219
 msgid "Eksport do CSV"
 msgstr ""
 
-#: essa-wp-suite.php:205
+#: essa-wp-suite.php:207
 msgid "Email po aktualizacji"
 msgstr ""
 
-#: essa-wp-suite.php:497
+#: essa-wp-suite.php:499
 msgid "Email wysłany do:"
 msgstr ""
 
-#: essa-wp-suite.php:534
+#: essa-wp-suite.php:536
 msgid "FREE"
 msgstr ""
 
-#: essa-wp-suite.php:255
+#: essa-wp-suite.php:257
 msgid "Filtr xmlrpc_enabled → false"
 msgstr ""
 
-#: essa-wp-suite.php:247
+#: essa-wp-suite.php:249
 msgid "Globalnie lub per typ postu"
 msgstr ""
 
-#: essa-wp-suite.php:436
+#: includes/class-promo.php:65
+msgid "Google Ads i Meta Ads"
+msgstr ""
+
+#: essa-wp-suite.php:438
 msgid "Hex (&#x41;)"
 msgstr ""
 
-#: essa-wp-suite.php:229
+#: essa-wp-suite.php:231
 msgid "Hooki: treść, zajawki, widżety, menu"
 msgstr ""
 
-#: essa-wp-suite.php:594
+#: essa-wp-suite.php:596
 msgid "IP zostało odblokowane."
 msgstr ""
 
@@ -235,8 +268,12 @@ msgstr ""
 msgid "Jest nowa wersja ESSA WP Suite — aktualizuj z listy wtyczek."
 msgstr ""
 
-#: essa-wp-suite.php:258
+#: essa-wp-suite.php:260
 msgid "Jetpack i aplikacja mobilna WordPress wymagają XML-RPC. Sprawdź przed wyłączeniem."
+msgstr ""
+
+#: includes/class-promo.php:66
+msgid "Kampanie z budżetem wpłacanym bezpośrednio do Google i Meta. Stała opłata od 500 zł plus prowizja od budżetu, dwie kreacje na start i nowa co miesiąc."
 msgstr ""
 
 #: includes/class-license.php:301
@@ -251,16 +288,16 @@ msgstr ""
 msgid "Klucz zdefiniowany w wp-config.php (EWPS_LICENSE_KEY)."
 msgstr ""
 
-#: essa-wp-suite.php:229
+#: essa-wp-suite.php:231
 msgid "Kodowanie decimal/hex/mixed"
 msgstr ""
 
-#: essa-wp-suite.php:239
-#: essa-wp-suite.php:494
+#: essa-wp-suite.php:241
+#: essa-wp-suite.php:496
 msgid "Koduj"
 msgstr ""
 
-#: essa-wp-suite.php:228
+#: essa-wp-suite.php:230
 msgid "Koduje adresy email do encji HTML. Boty spamowe ich nie odczytają, przeglądarka wyświetla normalnie. Działa bez JS."
 msgstr ""
 
@@ -276,11 +313,11 @@ msgstr ""
 msgid "Kolor tła"
 msgstr ""
 
-#: essa-wp-suite.php:211
+#: essa-wp-suite.php:213
 msgid "Kolory i CSS logowania"
 msgstr ""
 
-#: essa-wp-suite.php:386
+#: essa-wp-suite.php:388
 msgid "Komentarze"
 msgstr ""
 
@@ -292,15 +329,15 @@ msgstr ""
 msgid "Komentarze są wyłączone przez ESSA WP Suite."
 msgstr ""
 
-#: essa-wp-suite.php:217
+#: essa-wp-suite.php:219
 msgid "Konfigurowalny czas przechowywania"
 msgstr ""
 
-#: essa-wp-suite.php:639
+#: essa-wp-suite.php:641
 msgid "Konfiguruj →"
 msgstr ""
 
-#: essa-wp-suite.php:204
+#: essa-wp-suite.php:206
 msgid "Kontrola automatycznych aktualizacji WP core, wtyczek i motywów."
 msgstr ""
 
@@ -308,11 +345,11 @@ msgstr ""
 msgid "Kosz"
 msgstr ""
 
-#: essa-wp-suite.php:566
+#: essa-wp-suite.php:568
 msgid "Kup ESSA WP Suite Pro →"
 msgstr ""
 
-#: essa-wp-suite.php:363
+#: essa-wp-suite.php:365
 msgid "Kup Pro"
 msgstr ""
 
@@ -320,12 +357,12 @@ msgstr ""
 msgid "Kup licencję Pro →"
 msgstr ""
 
-#: essa-wp-suite.php:347
-#: essa-wp-suite.php:586
+#: essa-wp-suite.php:349
+#: essa-wp-suite.php:588
 msgid "Licencja Pro"
 msgstr ""
 
-#: essa-wp-suite.php:603
+#: essa-wp-suite.php:605
 msgid "Licencja Pro nieaktywna:"
 msgstr ""
 
@@ -345,11 +382,11 @@ msgstr ""
 msgid "Licencja zwolniona — możesz jej użyć na innej stronie."
 msgstr ""
 
-#: essa-wp-suite.php:181
+#: essa-wp-suite.php:183
 msgid "Limit prób + blokada IP"
 msgstr ""
 
-#: essa-wp-suite.php:193
+#: essa-wp-suite.php:195
 msgid "Limit rewizji na post"
 msgstr ""
 
@@ -357,51 +394,55 @@ msgstr ""
 msgid "Limit stron wyczerpany"
 msgstr ""
 
-#: essa-wp-suite.php:216
+#: essa-wp-suite.php:218
 msgid "Log akcji użytkowników: kto, co i kiedy zmienił, zalogował się, zainstalował."
 msgstr ""
 
-#: essa-wp-suite.php:211
+#: essa-wp-suite.php:213
 msgid "Logo na stronie logowania"
 msgstr ""
 
-#: essa-wp-suite.php:217
+#: essa-wp-suite.php:219
 msgid "Logowania, edycje, wtyczki, ustawienia"
 msgstr ""
 
-#: essa-wp-suite.php:600
+#: essa-wp-suite.php:602
 msgid "Maintenance Mode jest aktywny!"
 msgstr ""
 
-#: essa-wp-suite.php:493
+#: essa-wp-suite.php:495
 msgid "Maintenance Mode jest aktywny! Odwiedzający widzą stronę techniczną."
 msgstr ""
 
-#: essa-wp-suite.php:567
+#: essa-wp-suite.php:569
 msgid "Mam już klucz"
 msgstr ""
 
-#: essa-wp-suite.php:388
+#: essa-wp-suite.php:390
 msgid "Menu nawigacyjne"
 msgstr ""
 
-#: essa-wp-suite.php:377
+#: essa-wp-suite.php:379
 msgid "Metoda kodowania"
 msgstr ""
 
-#: essa-wp-suite.php:434
+#: essa-wp-suite.php:436
 msgid "Mieszany decimal+hex (zalecany)"
 msgstr ""
 
-#: essa-wp-suite.php:628
+#: essa-wp-suite.php:630
 msgid "Moduł Pro"
+msgstr ""
+
+#: includes/class-promo.php:79
+msgid "Moduł na życzenie"
 msgstr ""
 
 #: includes/class-license.php:351
 msgid "Moduły Pro"
 msgstr ""
 
-#: essa-wp-suite.php:501
+#: essa-wp-suite.php:503
 msgid "Na pewno wyczyścić: %s? Operacja jest nieodwracalna."
 msgstr ""
 
@@ -409,12 +450,16 @@ msgstr ""
 msgid "Na pewno? Nie można cofnąć!"
 msgstr ""
 
-#: essa-wp-suite.php:263
+#: essa-wp-suite.php:265
 msgid "Nagłówek 503 + Retry-After"
 msgstr ""
 
 #: includes/class-license.php:228
 msgid "Najpierw aktywuj ważny klucz licencji."
+msgstr ""
+
+#: includes/class-promo.php:183
+msgid "Nie pokazuj więcej"
 msgstr ""
 
 #: includes/class-updater.php:251
@@ -425,12 +470,12 @@ msgstr ""
 msgid "Nie udało się."
 msgstr ""
 
-#: essa-wp-suite.php:651
+#: essa-wp-suite.php:653
 msgid "Nieaktywne"
 msgstr ""
 
-#: essa-wp-suite.php:490
-#: essa-wp-suite.php:624
+#: essa-wp-suite.php:492
+#: essa-wp-suite.php:626
 msgid "Nieaktywny"
 msgstr ""
 
@@ -442,7 +487,7 @@ msgstr ""
 msgid "Nieprawidłowy klucz"
 msgstr ""
 
-#: essa-wp-suite.php:674
+#: essa-wp-suite.php:677
 msgid "Nieznana zakładka."
 msgstr ""
 
@@ -450,7 +495,7 @@ msgstr ""
 msgid "Nieznany"
 msgstr ""
 
-#: essa-wp-suite.php:464
+#: essa-wp-suite.php:466
 msgid "Nieznany moduł."
 msgstr ""
 
@@ -462,7 +507,7 @@ msgstr ""
 msgid "Np. 127.0.0.1, 192.168.1.0/24 — te IP zawsze widzą normalną stronę. Oddzielaj przecinkami lub nowymi liniami."
 msgstr ""
 
-#: essa-wp-suite.php:372
+#: essa-wp-suite.php:374
 msgid "Ochrona emaili"
 msgstr ""
 
@@ -470,11 +515,11 @@ msgstr ""
 msgid "Oczekujące"
 msgstr ""
 
-#: essa-wp-suite.php:656
+#: essa-wp-suite.php:658
 msgid "Odblokuj 7 modułów Pro jednym kluczem →"
 msgstr ""
 
-#: essa-wp-suite.php:600
+#: essa-wp-suite.php:602
 msgid "Odwiedzający widzą stronę techniczną."
 msgstr ""
 
@@ -482,15 +527,15 @@ msgstr ""
 msgid "Ostatnie sprawdzenie: %s"
 msgstr ""
 
-#: essa-wp-suite.php:534
+#: essa-wp-suite.php:536
 msgid "PRO"
 msgstr ""
 
-#: essa-wp-suite.php:267
+#: essa-wp-suite.php:269
 msgid "Pamiętaj o wyłączeniu trybu serwisowego po zakończeniu prac!"
 msgstr ""
 
-#: essa-wp-suite.php:282
+#: essa-wp-suite.php:284
 msgid "Panel notices w admin barze"
 msgstr ""
 
@@ -502,31 +547,47 @@ msgstr ""
 msgid "Pobierz i aktywuj Pro"
 msgstr ""
 
-#: essa-wp-suite.php:268
+#: essa-wp-suite.php:270
 msgid "Podgląd"
 msgstr ""
 
-#: essa-wp-suite.php:268
+#: essa-wp-suite.php:270
 msgid "Podgląd działa także przy wyłączonym module. Zapisz ustawienia przed podglądem."
 msgstr ""
 
-#: essa-wp-suite.php:389
+#: essa-wp-suite.php:391
 msgid "Pole autora"
+msgstr ""
+
+#: includes/class-promo.php:46
+msgid "Potrzebujesz więcej niż wtyczki?"
 msgstr ""
 
 #: includes/class-admin-notices.php:141
 msgid "Powiadomienia wtyczek"
 msgstr ""
 
-#: essa-wp-suite.php:187
+#: includes/class-promo.php:51
+msgid "Pozycjonowanie stron"
+msgstr ""
+
+#: includes/class-promo.php:86
+msgid "Pozycjonowanie stron, wizytówka Google, Google Ads, strony WWW. Bezpłatna konsultacja i wycena do 24 h."
+msgstr ""
+
+#: includes/class-promo.php:59
+msgid "Pozycjonowanie w Mapach Google: pomiar widoczności na siatce punktów w mieście, opinie, zdjęcia, wpisy. Od 599 zł miesięcznie."
+msgstr ""
+
+#: essa-wp-suite.php:189
 msgid "Presety Gmail, OVH, Brevo"
 msgstr ""
 
-#: essa-wp-suite.php:378
+#: essa-wp-suite.php:380
 msgid "Priorytet filtrów"
 msgstr ""
 
-#: essa-wp-suite.php:210
+#: essa-wp-suite.php:212
 msgid "Rebranding panelu: własne logo logowania, kolory, nazwa, stopka."
 msgstr ""
 
@@ -546,11 +607,11 @@ msgstr ""
 msgid "Serwer licencji: %s"
 msgstr ""
 
-#: essa-wp-suite.php:233
+#: essa-wp-suite.php:235
 msgid "Shortcode"
 msgstr ""
 
-#: essa-wp-suite.php:229
+#: essa-wp-suite.php:231
 msgid "Shortcode [encode]"
 msgstr ""
 
@@ -558,11 +619,11 @@ msgstr ""
 msgid "Spam"
 msgstr ""
 
-#: essa-wp-suite.php:360
+#: essa-wp-suite.php:362
 msgid "Sprawdź aktualizacje"
 msgstr ""
 
-#: essa-wp-suite.php:603
+#: essa-wp-suite.php:605
 msgid "Sprawdź licencję →"
 msgstr ""
 
@@ -578,15 +639,19 @@ msgstr ""
 msgid "Strona jest za proxy / Cloudflare"
 msgstr ""
 
-#: essa-wp-suite.php:262
+#: essa-wp-suite.php:264
 msgid "Strona serwisowa 503 dla odwiedzających. Admini widzą normalną stronę."
+msgstr ""
+
+#: includes/class-promo.php:72
+msgid "Strony internetowe"
 msgstr ""
 
 #: includes/class-license.php:317
 msgid "Strony: %1$d z %2$d"
 msgstr ""
 
-#: essa-wp-suite.php:187
+#: essa-wp-suite.php:189
 msgid "TLS / SSL / brak"
 msgstr ""
 
@@ -598,11 +663,11 @@ msgstr ""
 msgid "Ta rola i wyższe zawsze widzą normalną stronę."
 msgstr ""
 
-#: essa-wp-suite.php:466
+#: essa-wp-suite.php:468
 msgid "Ten moduł jest w wersji Pro."
 msgstr ""
 
-#: essa-wp-suite.php:237
+#: essa-wp-suite.php:239
 msgid "Test kodowania"
 msgstr ""
 
@@ -610,7 +675,7 @@ msgstr ""
 msgid "Treść komunikatu (HTML dozwolony)"
 msgstr ""
 
-#: essa-wp-suite.php:384
+#: essa-wp-suite.php:386
 msgid "Treść postów/stron"
 msgstr ""
 
@@ -646,7 +711,7 @@ msgstr ""
 msgid "URL zdjęcia tła"
 msgstr ""
 
-#: essa-wp-suite.php:181
+#: essa-wp-suite.php:183
 msgid "Ukrycie /wp-login.php"
 msgstr ""
 
@@ -654,15 +719,15 @@ msgstr ""
 msgid "Ukryj UI komentarzy w adminie"
 msgstr ""
 
-#: essa-wp-suite.php:211
+#: essa-wp-suite.php:213
 msgid "Ukryj branding WordPress"
 msgstr ""
 
-#: essa-wp-suite.php:199
+#: essa-wp-suite.php:201
 msgid "Ukryj pozycje menu"
 msgstr ""
 
-#: essa-wp-suite.php:199
+#: essa-wp-suite.php:201
 msgid "Ukryj widżety kokpitu"
 msgstr ""
 
@@ -670,7 +735,7 @@ msgstr ""
 msgid "Ukryte powiadomienia wtyczek"
 msgstr ""
 
-#: essa-wp-suite.php:273
+#: essa-wp-suite.php:275
 msgid "Ukrywa wersję WP, wyłącza emoji, dodaje nagłówki bezpieczeństwa."
 msgstr ""
 
@@ -678,35 +743,35 @@ msgstr ""
 msgid "Unieważniona"
 msgstr ""
 
-#: essa-wp-suite.php:198
+#: essa-wp-suite.php:200
 msgid "Upraszcza panel: ukrywa zbędne menu, widżety kokpitu i elementy UI."
 msgstr ""
 
-#: essa-wp-suite.php:358
+#: essa-wp-suite.php:360
 msgid "Ustawienia"
 msgstr ""
 
-#: essa-wp-suite.php:277
+#: essa-wp-suite.php:279
 msgid "Usunięcie ?ver= z adresów assetów wyłącza odświeżanie cache przeglądarki po aktualizacjach. Przy problemach ze stylami po update wyłącz tę opcję."
 msgstr ""
 
-#: essa-wp-suite.php:597
+#: essa-wp-suite.php:599
 msgid "Usunięto komentarzy: %d."
 msgstr ""
 
-#: essa-wp-suite.php:274
+#: essa-wp-suite.php:276
 msgid "Usuwa ?ver= z URL assetów"
 msgstr ""
 
-#: essa-wp-suite.php:255
+#: essa-wp-suite.php:257
 msgid "Usuwa X-Pingback, RSD, wlwmanifest"
 msgstr ""
 
-#: essa-wp-suite.php:247
+#: essa-wp-suite.php:249
 msgid "Usuwa menu i widżety admina"
 msgstr ""
 
-#: essa-wp-suite.php:274
+#: essa-wp-suite.php:276
 msgid "Usuwa meta generator"
 msgstr ""
 
@@ -754,11 +819,11 @@ msgstr ""
 msgid "Ważna do: %s"
 msgstr ""
 
-#: essa-wp-suite.php:653
+#: essa-wp-suite.php:655
 msgid "Wersja"
 msgstr ""
 
-#: essa-wp-suite.php:263
+#: essa-wp-suite.php:265
 #: includes/class-maintenance.php:183
 msgid "Whitelist IP"
 msgstr ""
@@ -767,19 +832,27 @@ msgstr ""
 msgid "Whitelist klas CSS (zawsze widoczne)"
 msgstr ""
 
-#: essa-wp-suite.php:282
+#: essa-wp-suite.php:284
 msgid "Whitelist — wybrane zawsze widoczne"
 msgstr ""
 
-#: essa-wp-suite.php:285
+#: essa-wp-suite.php:287
 msgid "Whitelist: klasy CSS powiadomień, które mają być zawsze widoczne (np. woocommerce-message)."
 msgstr ""
 
-#: essa-wp-suite.php:387
+#: essa-wp-suite.php:389
 msgid "Widżety tekstowe"
 msgstr ""
 
-#: essa-wp-suite.php:674
+#: includes/class-promo.php:58
+msgid "Wizytówka Google"
+msgstr ""
+
+#: includes/class-promo.php:73
+msgid "WordPress i Elementor, szybkie i gotowe pod SEO od pierwszego dnia. Z tą wtyczką na pokładzie."
+msgstr ""
+
+#: essa-wp-suite.php:677
 msgid "Wróć do dashboardu"
 msgstr ""
 
@@ -787,7 +860,7 @@ msgstr ""
 msgid "Wszystkie"
 msgstr ""
 
-#: essa-wp-suite.php:571
+#: essa-wp-suite.php:573
 msgid "Wszystkie moduły Pro odblokowuje jeden klucz licencji. Po aktywacji wtyczka Pro instaluje się jednym kliknięciem z zakładki Licencja."
 msgstr ""
 
@@ -799,7 +872,7 @@ msgstr ""
 msgid "Wtyczka Pro jest na serwerze, ale nieaktywna. Kliknij, żeby ją aktywować (lub nadpisać najnowszą wersją)."
 msgstr ""
 
-#: essa-wp-suite.php:205
+#: essa-wp-suite.php:207
 msgid "Wtyczki i motywy: wymuś / zablokuj / jak w WP"
 msgstr ""
 
@@ -807,7 +880,7 @@ msgstr ""
 msgid "Wybrane typy postów"
 msgstr ""
 
-#: essa-wp-suite.php:502
+#: essa-wp-suite.php:504
 msgid "Wyczyść"
 msgstr ""
 
@@ -815,15 +888,15 @@ msgstr ""
 msgid "Wygasła"
 msgstr ""
 
-#: essa-wp-suite.php:624
+#: essa-wp-suite.php:626
 msgid "Wymaga Pro"
 msgstr ""
 
-#: essa-wp-suite.php:186
+#: essa-wp-suite.php:188
 msgid "Wysyła wp_mail() przez prawdziwy serwer SMTP, żeby maile nie trafiały do spamu."
 msgstr ""
 
-#: essa-wp-suite.php:495
+#: essa-wp-suite.php:497
 msgid "Wysyłanie…"
 msgstr ""
 
@@ -835,15 +908,15 @@ msgstr ""
 msgid "Wyłącz skrypty emoji WP (szybszy frontend)"
 msgstr ""
 
-#: essa-wp-suite.php:246
+#: essa-wp-suite.php:248
 msgid "Wyłącza komentarze na całej stronie lub per typ postu. Czyści UI admina."
 msgstr ""
 
-#: essa-wp-suite.php:496
+#: essa-wp-suite.php:498
 msgid "Wyślij test"
 msgstr ""
 
-#: essa-wp-suite.php:199
+#: essa-wp-suite.php:201
 msgid "Własna stopka admina"
 msgstr ""
 
@@ -851,23 +924,23 @@ msgstr ""
 msgid "Własne CSS"
 msgstr ""
 
-#: essa-wp-suite.php:180
+#: essa-wp-suite.php:182
 msgid "Własny adres logowania, ukrycie /wp-login.php i limit prób z blokadą IP."
 msgstr ""
 
-#: essa-wp-suite.php:187
+#: essa-wp-suite.php:189
 msgid "Własny nadawca From"
 msgstr ""
 
-#: essa-wp-suite.php:181
+#: essa-wp-suite.php:183
 msgid "Własny slug logowania"
 msgstr ""
 
-#: essa-wp-suite.php:263
+#: essa-wp-suite.php:265
 msgid "Własny tytuł i treść HTML"
 msgstr ""
 
-#: essa-wp-suite.php:376
+#: essa-wp-suite.php:378
 msgid "Włącz Email Encoder"
 msgstr ""
 
@@ -889,11 +962,11 @@ msgstr ""
 msgid "Włącz tylko za Cloudflare / reverse proxy — wtedy whitelist IP porównuje adres z nagłówków proxy."
 msgstr ""
 
-#: essa-wp-suite.php:630
+#: essa-wp-suite.php:632
 msgid "Włącz/wyłącz: %s"
 msgstr ""
 
-#: essa-wp-suite.php:274
+#: essa-wp-suite.php:276
 msgid "X-Frame-Options, nosniff, Referrer-Policy"
 msgstr ""
 
@@ -901,7 +974,7 @@ msgstr ""
 msgid "Zainstaluj ESSA WP Suite Pro"
 msgstr ""
 
-#: essa-wp-suite.php:385
+#: essa-wp-suite.php:387
 msgid "Zajawki"
 msgstr ""
 
@@ -913,11 +986,15 @@ msgstr ""
 msgid "Zamknij"
 msgstr ""
 
-#: essa-wp-suite.php:488
+#: includes/class-promo.php:82
+msgid "Zamów moduł"
+msgstr ""
+
+#: essa-wp-suite.php:490
 msgid "Zapisywanie…"
 msgstr ""
 
-#: essa-wp-suite.php:547
+#: essa-wp-suite.php:549
 msgid "Zapisz"
 msgstr ""
 
@@ -933,11 +1010,18 @@ msgstr ""
 msgid "Zestaw narzędzi administracyjnych WordPress od ESSA SEO: Email Encoder, Disable Comments, Login Security, Disable XML-RPC, Maintenance Mode, WP Hardening, Admin Notices, SMTP, DB Cleaner, Admin Cleaner, Auto Updates, White Label, Activity Log."
 msgstr ""
 
-#: essa-wp-suite.php:268
+#: includes/class-promo.php:54
+#: includes/class-promo.php:61
+#: includes/class-promo.php:68
+#: includes/class-promo.php:75
+msgid "Zobacz ofertę"
+msgstr ""
+
+#: essa-wp-suite.php:270
 msgid "Zobacz stronę serwisową →"
 msgstr ""
 
-#: essa-wp-suite.php:639
+#: essa-wp-suite.php:641
 msgid "Zobacz →"
 msgstr ""
 
@@ -949,12 +1033,16 @@ msgstr ""
 msgid "Zwolnić licencję na tej stronie? Moduły Pro przestaną działać."
 msgstr ""
 
-#: essa-wp-suite.php:492
-#: essa-wp-suite.php:532
+#: essa-wp-suite.php:494
+#: essa-wp-suite.php:534
 msgid "aktywnych"
 msgstr ""
 
-#: essa-wp-suite.php:499
+#: includes/class-promo.php:180
+msgid "dzięki za instalację! Moduły włączasz na dashboardzie wtyczki. Potrzebujesz pozycjonowania, reklam albo modułu na życzenie?"
+msgstr ""
+
+#: essa-wp-suite.php:501
 msgid "nieznany"
 msgstr ""
 
