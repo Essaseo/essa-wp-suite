@@ -1,1051 +1,1049 @@
-# ESSA WP Suite — szablon tłumaczeń
+# ESSA WP Suite — polskie tlumaczenie
 msgid ""
 msgstr ""
 "Project-Id-Version: ESSA WP Suite\n"
-"POT-Creation-Date: 2026-09-03 19:23+0000\n"
+"Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Domain: essa-wp-suite\n"
 
 #: essa-wp-suite.php:265
 msgid "503 header with Retry-After"
-msgstr ""
+msgstr "Nagłówek 503 + Retry-After"
 
 #: essa-wp-suite.php:264
 msgid "A 503 maintenance page for visitors. Administrators still see the normal site."
-msgstr ""
+msgstr "Strona serwisowa 503 dla odwiedzających. Admini widzą normalną stronę."
 
 #: includes/class-updater.php:179
 msgid "A WordPress admin toolkit by ESSA SEO: Email Encoder, Disable Comments, Login Security, Disable XML-RPC, Maintenance Mode, WP Hardening, Admin Notices, SMTP, DB Cleaner, Admin Cleaner, Auto Updates, White Label, Activity Log."
-msgstr ""
+msgstr "Zestaw narzędzi administracyjnych WordPress od ESSA SEO: Email Encoder, Disable Comments, Login Security, Disable XML-RPC, Maintenance Mode, WP Hardening, Admin Notices, SMTP, DB Cleaner, Admin Cleaner, Auto Updates, White Label, Activity Log."
 
 #: essa-wp-suite.php:182
 msgid "A custom login URL, hidden /wp-login.php and an attempt limit with IP lockout."
-msgstr ""
+msgstr "Własny adres logowania, ukrycie /wp-login.php i limit prób z blokadą IP."
 
 #: essa-wp-suite.php:218
 msgid "A log of user actions: who changed, logged in or installed what, and when."
-msgstr ""
+msgstr "Log akcji użytkowników: kto, co i kiedy zmienił, zalogował się, zainstalował."
 
 #: includes/class-updater.php:249
 msgid "A new version of ESSA WP Suite is available — update it from the Plugins screen."
-msgstr ""
+msgstr "Jest nowa wersja ESSA WP Suite — aktualizuj z listy wtyczek."
 
 #: essa-wp-suite.php:502
 msgid "AJAX connection error."
-msgstr ""
+msgstr "Błąd połączenia AJAX."
 
 #: includes/class-maintenance.php:179
 msgid "Accent colour (badge, bar)"
-msgstr ""
+msgstr "Kolor akcentu (badge, pasek)"
 
 #: includes/class-license.php:228
 msgid "Activate a valid license key first."
-msgstr ""
+msgstr "Najpierw aktywuj ważny klucz licencji."
 
 #: includes/class-license.php:329
 msgid "Activate license"
-msgstr ""
+msgstr "Aktywuj licencję"
 
 #: includes/class-license.php:333
 msgid "Activate on this domain"
-msgstr ""
+msgstr "Aktywuj na tej domenie"
 
 #: essa-wp-suite.php:491
 #: essa-wp-suite.php:626
 #: essa-wp-suite.php:652
 #: includes/class-license.php:99
 msgid "Active"
-msgstr ""
+msgstr "Aktywny"
 
 #: includes/class-license.php:107
 msgid "Active, but the license server has not responded for 14 days"
-msgstr ""
+msgstr "Aktywna, ale serwer licencji nie odpowiada od 14 dni"
 
 #: includes/class-wp-hardening.php:158
 msgid "Add security headers (X-Frame-Options, nosniff, …)"
-msgstr ""
+msgstr "Dodaj Security Headers (X-Frame-Options, nosniff, …)"
 
 #: includes/class-disable-comments.php:418
 msgid "All"
-msgstr ""
+msgstr "Wszystkie"
 
 #: includes/class-disable-comments.php:356
 msgid "All post types"
-msgstr ""
+msgstr "Wszystkie typy postów"
 
 #: includes/class-maintenance.php:258
 msgid "Allowed: a, p, span, strong, em, br, ul, li and the href/class/target attributes."
-msgstr ""
+msgstr "Dozwolone: a, p, span, strong, em, br, ul, li i atrybuty href/class/target."
 
 #: includes/class-admin-notices.php:251
 msgid "Always show errors (red)"
-msgstr ""
+msgstr "Zawsze pokazuj błędy (czerwone)"
 
 #: includes/class-disable-comments.php:405
 msgid "Approved"
-msgstr ""
+msgstr "Zatwierdzone"
 
 #: includes/class-disable-comments.php:429
 msgid "Are you sure? This cannot be undone!"
-msgstr ""
+msgstr "Na pewno? Nie można cofnąć!"
 
 #: essa-wp-suite.php:183
 msgid "Attempt limit and IP lockout"
-msgstr ""
+msgstr "Limit prób + blokada IP"
 
 #: essa-wp-suite.php:391
 msgid "Author field"
-msgstr ""
+msgstr "Pole autora"
 
 #: essa-wp-suite.php:677
 msgid "Back to the dashboard"
-msgstr ""
+msgstr "Wróć do dashboardu"
 
 #: includes/class-maintenance.php:177
 msgid "Background colour"
-msgstr ""
+msgstr "Kolor tła"
 
 #: includes/class-maintenance.php:176
 msgid "Background image URL"
-msgstr ""
+msgstr "URL zdjęcia tła"
 
 #: includes/class-disable-xmlrpc.php:100
 msgid "Block /xmlrpc.php (return 403)"
-msgstr ""
+msgstr "Blokuj /xmlrpc.php (zwróć 403)"
 
 #: includes/class-disable-comments.php:302
 msgid "Block comments via REST API"
-msgstr ""
+msgstr "Blokuj komentarze przez REST API"
 
 #: includes/class-disable-comments.php:303
 msgid "Block comments via XML-RPC"
-msgstr ""
+msgstr "Blokuj komentarze przez XML-RPC"
 
 #: includes/class-admin-notices.php:252
 msgid "Block plugin pop-ups and overlays (CSS)"
-msgstr ""
+msgstr "Blokuj popupy i overlaye wtyczek (CSS)"
 
 #: essa-wp-suite.php:249
 msgid "Blocks REST API and XML-RPC"
-msgstr ""
+msgstr "Blokuje REST API i XML-RPC"
 
 #: essa-wp-suite.php:284
 msgid "Blocks plugin pop-ups"
-msgstr ""
+msgstr "Blokada popupów wtyczek"
 
 #: essa-wp-suite.php:568
 msgid "Buy ESSA WP Suite Pro →"
-msgstr ""
+msgstr "Kup ESSA WP Suite Pro →"
 
 #: essa-wp-suite.php:365
 msgid "Buy Pro"
-msgstr ""
+msgstr "Kup Pro"
 
 #: includes/class-license.php:358
 msgid "Buy a Pro license →"
-msgstr ""
+msgstr "Kup licencję Pro →"
 
 #: includes/class-admin-notices.php:253
 msgid "CSS class whitelist (always visible)"
-msgstr ""
+msgstr "Whitelist klas CSS (zawsze widoczne)"
 
 #: includes/class-promo.php:66
 msgid "Campaigns with the budget paid straight to Google and Meta. Flat fee from PLN 500 plus a percentage of the budget, two creatives to start and a new one every month."
-msgstr ""
+msgstr "Kampanie z budżetem wpłacanym bezpośrednio do Google i Meta. Stała opłata od 500 zł plus prowizja od budżetu, dwie kreacje na start i nowa co miesiąc."
 
 #: includes/class-license.php:331
 msgid "Check again"
-msgstr ""
+msgstr "Sprawdź ponownie"
 
 #: essa-wp-suite.php:362
 msgid "Check for updates"
-msgstr ""
+msgstr "Sprawdź aktualizacje"
 
 #: essa-wp-suite.php:605
 msgid "Check the license →"
-msgstr ""
+msgstr "Sprawdź licencję →"
 
 #: essa-wp-suite.php:504
 msgid "Clean up"
-msgstr ""
+msgstr "Wyczyść"
 
 #: essa-wp-suite.php:194
 msgid "Cleans the database: revisions, expired transients, auto-drafts, spam, orphaned meta."
-msgstr ""
+msgstr "Czyści bazę: rewizje, wygasłe transjenty, auto-drafty, spam, osierocone meta."
 
 #: includes/class-admin-notices.php:142
 msgid "Close"
-msgstr ""
+msgstr "Zamknij"
 
 #: essa-wp-suite.php:388
 msgid "Comments"
-msgstr ""
+msgstr "Komentarze"
 
 #: includes/class-disable-comments.php:245
 msgid "Comments are disabled by ESSA WP Suite."
-msgstr ""
+msgstr "Komentarze są wyłączone przez ESSA WP Suite."
 
 #: includes/class-disable-comments.php:210
 msgid "Comments are disabled on this site."
-msgstr ""
+msgstr "Komentarze są wyłączone na tej stronie."
 
 #: essa-wp-suite.php:599
 msgid "Comments deleted: %d."
-msgstr ""
+msgstr "Usunięto komentarzy: %d."
 
 #: essa-wp-suite.php:219
 msgid "Configurable retention period"
-msgstr ""
+msgstr "Konfigurowalny czas przechowywania"
 
 #: essa-wp-suite.php:641
 msgid "Configure →"
-msgstr ""
+msgstr "Konfiguruj →"
 
 #: essa-wp-suite.php:206
 msgid "Control automatic updates of WordPress core, plugins and themes."
-msgstr ""
+msgstr "Kontrola automatycznych aktualizacji WP core, wtyczek i motywów."
 
 #: essa-wp-suite.php:207
 msgid "Core major and minor separately"
-msgstr ""
+msgstr "Core major/minor osobno"
 
 #: includes/class-updater.php:251
 msgid "Could not reach GitHub, or the repository has no release yet."
-msgstr ""
+msgstr "Nie udało się połączyć z GitHubem albo repozytorium nie ma jeszcze wydania."
 
 #: includes/class-maintenance.php:181
 msgid "Custom CSS"
-msgstr ""
+msgstr "Własne CSS"
 
 #: essa-wp-suite.php:189
 msgid "Custom From sender"
-msgstr ""
+msgstr "Własny nadawca From"
 
 #: essa-wp-suite.php:201
 msgid "Custom admin footer"
-msgstr ""
+msgstr "Własna stopka admina"
 
 #: essa-wp-suite.php:183
 msgid "Custom login slug"
-msgstr ""
+msgstr "Własny slug logowania"
 
 #: includes/class-promo.php:79
 msgid "Custom module"
-msgstr ""
+msgstr "Moduł na życzenie"
 
 #: essa-wp-suite.php:265
 msgid "Custom title and HTML body"
-msgstr ""
+msgstr "Własny tytuł i treść HTML"
 
 #: essa-wp-suite.php:343
 #: essa-wp-suite.php:531
 #: includes/class-promo.php:181
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #: includes/class-license.php:335
 msgid "Deactivate / change key"
-msgstr ""
+msgstr "Dezaktywuj / zmień klucz"
 
 #: essa-wp-suite.php:437
 msgid "Decimal (&#65;)"
-msgstr ""
+msgstr "Decimal (&#65;)"
 
 #: essa-wp-suite.php:231
 msgid "Decimal, hex or mixed encoding"
-msgstr ""
+msgstr "Kodowanie decimal/hex/mixed"
 
 #: essa-wp-suite.php:448
 msgid "Default is 100. Raise it if other plugins overwrite the content after encoding."
-msgstr ""
+msgstr "Domyślnie 100. Zwiększ, jeśli inne wtyczki nadpisują treść po kodowaniu."
 
 #: includes/class-disable-comments.php:430
 msgid "Delete comments"
-msgstr ""
+msgstr "Usuń komentarze"
 
 #: includes/class-disable-comments.php:403
 msgid "Delete comments from the database"
-msgstr ""
+msgstr "Usuń komentarze z bazy"
 
 #: includes/class-disable-comments.php:416
 msgid "Delete:"
-msgstr ""
+msgstr "Usuń:"
 
 #: includes/class-wp-hardening.php:156
 msgid "Disable WordPress emoji scripts (faster front end)"
-msgstr ""
+msgstr "Wyłącz skrypty emoji WP (szybszy frontend)"
 
 #: includes/class-disable-comments.php:305
 msgid "Disable comment feeds"
-msgstr ""
+msgstr "Wyłącz feedy komentarzy"
 
 #: includes/class-promo.php:183
 msgid "Do not show again"
-msgstr ""
+msgstr "Nie pokazuj więcej"
 
 #: includes/class-license.php:323
 msgid "Domain"
-msgstr ""
+msgstr "Domena"
 
 #: includes/class-license.php:344
 msgid "Download and activate Pro"
-msgstr ""
+msgstr "Pobierz i aktywuj Pro"
 
 #: includes/class-promo.php:85
 msgid "ESSA SEO"
-msgstr ""
+msgstr "ESSA SEO"
 
 #: includes/class-promo.php:91
 msgid "ESSA SEO blog"
-msgstr ""
+msgstr "Blog ESSA SEO"
 
 #: includes/class-updater.php:250
 msgid "ESSA WP Suite %s is the latest version."
-msgstr ""
+msgstr "ESSA WP Suite %s to najnowsza wersja."
 
 #: includes/class-license.php:284
 msgid "ESSA WP Suite Pro installed and activated. The Pro modules are on the dashboard now."
-msgstr ""
+msgstr "ESSA WP Suite Pro zainstalowane i aktywowane. Moduły Pro są już na dashboardzie."
 
 #: includes/class-promo.php:47
 msgid "ESSA WP Suite is the toolkit we run on client sites. We can also rank, build or advertise the site itself."
-msgstr ""
+msgstr "ESSA WP Suite to narzędzia, których używamy na stronach klientów. Samą stronę też możemy wypozycjonować, zbudować albo obsłużyć jej reklamy."
 
 #: essa-wp-suite.php:207
 msgid "Email after an update"
-msgstr ""
+msgstr "Email po aktualizacji"
 
 #: essa-wp-suite.php:374
 msgid "Email protection"
-msgstr ""
+msgstr "Ochrona emaili"
 
 #: essa-wp-suite.php:499
 msgid "Email sent to:"
-msgstr ""
+msgstr "Email wysłany do:"
 
 #: essa-wp-suite.php:378
 msgid "Enable Email Encoder"
-msgstr ""
+msgstr "Włącz Email Encoder"
 
 #: includes/class-maintenance.php:172
 msgid "Enable maintenance mode"
-msgstr ""
+msgstr "Włącz tryb serwisowy"
 
 #: includes/class-admin-notices.php:247
 #: includes/class-disable-comments.php:299
 #: includes/class-wp-hardening.php:151
 msgid "Enable module"
-msgstr ""
+msgstr "Włącz moduł"
 
 #: includes/class-disable-xmlrpc.php:97
 msgid "Enable module (disable XML-RPC)"
-msgstr ""
+msgstr "Włącz moduł (wyłącz XML-RPC)"
 
 #: essa-wp-suite.php:632
 msgid "Enable or disable: %s"
-msgstr ""
+msgstr "Włącz/wyłącz: %s"
 
 #: essa-wp-suite.php:241
 #: essa-wp-suite.php:496
 msgid "Encode"
-msgstr ""
+msgstr "Koduj"
 
 #: essa-wp-suite.php:230
 msgid "Encodes email addresses into HTML entities. Spam bots cannot read them, browsers show them normally. Works without JavaScript."
-msgstr ""
+msgstr "Koduje adresy email do encji HTML. Boty spamowe ich nie odczytają, przeglądarka wyświetla normalnie. Działa bez JS."
 
 #: essa-wp-suite.php:379
 msgid "Encoding method"
-msgstr ""
+msgstr "Metoda kodowania"
 
 #: essa-wp-suite.php:239
 msgid "Encoding test"
-msgstr ""
+msgstr "Test kodowania"
 
 #: essa-wp-suite.php:257
 msgid "Endpoint blocked with 403"
-msgstr ""
+msgstr "Blokada endpointu 403"
 
 #: essa-wp-suite.php:493
 msgid "Error. Please try again."
-msgstr ""
+msgstr "Błąd. Spróbuj ponownie."
 
 #: essa-wp-suite.php:500
 msgid "Error:"
-msgstr ""
+msgstr "Błąd:"
 
 #: essa-wp-suite.php:387
 msgid "Excerpts"
-msgstr ""
+msgstr "Zajawki"
 
 #: includes/class-license.php:100
 msgid "Expired"
-msgstr ""
+msgstr "Wygasła"
 
 #: essa-wp-suite.php:219
 msgid "Export to CSV"
-msgstr ""
+msgstr "Eksport do CSV"
 
 #: includes/class-maintenance.php:180
 msgid "Extra HTML (e.g. social links)"
-msgstr ""
+msgstr "Dodatkowy HTML (np. social linki)"
 
 #: essa-wp-suite.php:536
 msgid "FREE"
-msgstr ""
+msgstr "FREE"
 
 #: essa-wp-suite.php:380
 msgid "Filter priority"
-msgstr ""
+msgstr "Priorytet filtrów"
 
 #: essa-wp-suite.php:257
 msgid "Filter xmlrpc_enabled → false"
-msgstr ""
+msgstr "Filtr xmlrpc_enabled → false"
 
 #: includes/class-admin-notices.php:283
 msgid "For example \"woocommerce-message, tribe-notice\" — notices with these classes always stay visible."
-msgstr ""
+msgstr "Np. \"woocommerce-message, tribe-notice\" — powiadomienia z tymi klasami zawsze będą widoczne."
 
 #: includes/class-maintenance.php:272
 msgid "For example 127.0.0.1, 192.168.1.0/24 — these addresses always see the normal site. Separate them with commas or new lines."
-msgstr ""
+msgstr "Np. 127.0.0.1, 192.168.1.0/24 — te IP zawsze widzą normalną stronę. Oddzielaj przecinkami lub nowymi liniami."
 
 #: includes/class-promo.php:52
 msgid "Free audit and action plan, quote within 24 h. Ongoing work from PLN 1,500 net per month, three-month contract, then one month's notice."
-msgstr ""
+msgstr "Audyt i plan prac za darmo, wycena do 24 h. Prowadzenie od 1500 zł netto miesięcznie, umowa 3 miesiące, potem miesięczne wypowiedzenie."
 
 #: includes/class-promo.php:88
 msgid "Free consultation"
-msgstr ""
+msgstr "Bezpłatna konsultacja"
 
 #: includes/class-promo.php:182
 msgid "Free consultation with ESSA SEO"
-msgstr ""
+msgstr "Bezpłatna konsultacja ESSA SEO"
 
 #: includes/class-maintenance.php:234
 msgid "Full-screen background image. Leave empty to use the background colour."
-msgstr ""
+msgstr "Pełnoekranowe zdjęcie tła. Zostaw puste aby użyć koloru tła."
 
 #: essa-wp-suite.php:249
 msgid "Globally or per post type"
-msgstr ""
+msgstr "Globalnie lub per typ postu"
 
 #: essa-wp-suite.php:189
 msgid "Gmail, OVH and Brevo presets"
-msgstr ""
+msgstr "Presety Gmail, OVH, Brevo"
 
 #: includes/class-promo.php:65
 msgid "Google Ads and Meta Ads"
-msgstr ""
+msgstr "Google Ads i Meta Ads"
 
 #: includes/class-promo.php:58
 msgid "Google Business Profile"
-msgstr ""
+msgstr "Wizytówka Google"
 
 #: essa-wp-suite.php:438
 msgid "Hex (&#x41;)"
-msgstr ""
+msgstr "Hex (&#x41;)"
 
 #: includes/class-admin-notices.php:64
 msgid "Hidden plugin notices"
-msgstr ""
+msgstr "Ukryte powiadomienia wtyczek"
 
 #: essa-wp-suite.php:213
 msgid "Hide WordPress branding"
-msgstr ""
+msgstr "Ukryj branding WordPress"
 
 #: essa-wp-suite.php:201
 msgid "Hide dashboard widgets"
-msgstr ""
+msgstr "Ukryj widżety kokpitu"
 
 #: includes/class-admin-notices.php:248
 msgid "Hide info notices (blue)"
-msgstr ""
+msgstr "Chowaj powiadomienia informacyjne (niebieskie)"
 
 #: essa-wp-suite.php:201
 msgid "Hide menu items"
-msgstr ""
+msgstr "Ukryj pozycje menu"
 
 #: includes/class-admin-notices.php:249
 msgid "Hide success notices (green)"
-msgstr ""
+msgstr "Chowaj powiadomienia sukcesu (zielone)"
 
 #: includes/class-disable-comments.php:304
 msgid "Hide the comment interface in the admin"
-msgstr ""
+msgstr "Ukryj UI komentarzy w adminie"
 
 #: includes/class-admin-notices.php:250
 msgid "Hide warnings (yellow)"
-msgstr ""
+msgstr "Chowaj ostrzeżenia (żółte)"
 
 #: essa-wp-suite.php:183
 msgid "Hides /wp-login.php"
-msgstr ""
+msgstr "Ukrycie /wp-login.php"
 
 #: essa-wp-suite.php:275
 msgid "Hides the WordPress version, disables emoji scripts, adds security headers."
-msgstr ""
+msgstr "Ukrywa wersję WP, wyłącza emoji, dodaje nagłówki bezpieczeństwa."
 
 #: essa-wp-suite.php:231
 msgid "Hooks: content, excerpts, widgets, menus"
-msgstr ""
+msgstr "Hooki: treść, zajawki, widżety, menu"
 
 #: essa-wp-suite.php:569
 msgid "I already have a key"
-msgstr ""
+msgstr "Mam już klucz"
 
 #: essa-wp-suite.php:265
 #: includes/class-maintenance.php:183
 msgid "IP whitelist"
-msgstr ""
+msgstr "Whitelist IP"
 
 #: essa-wp-suite.php:492
 #: essa-wp-suite.php:626
 #: essa-wp-suite.php:653
 msgid "Inactive"
-msgstr ""
+msgstr "Nieaktywny"
 
 #: includes/class-license.php:340
 msgid "Install ESSA WP Suite Pro"
-msgstr ""
+msgstr "Zainstaluj ESSA WP Suite Pro"
 
 #: includes/class-license.php:247
 msgid "Installation failed."
-msgstr ""
+msgstr "Instalacja nie powiodła się."
 
 #: includes/class-license.php:102
 msgid "Invalid key"
-msgstr ""
+msgstr "Nieprawidłowy klucz"
 
 #: essa-wp-suite.php:260
 msgid "Jetpack and the WordPress mobile app need XML-RPC. Check before turning it off."
-msgstr ""
+msgstr "Jetpack i aplikacja mobilna WordPress wymagają XML-RPC. Sprawdź przed wyłączeniem."
 
 #: includes/class-license.php:309
 msgid "Key defined in wp-config.php (EWPS_LICENSE_KEY)."
-msgstr ""
+msgstr "Klucz zdefiniowany w wp-config.php (EWPS_LICENSE_KEY)."
 
 #: includes/class-license.php:319
 msgid "Last checked: %s"
-msgstr ""
+msgstr "Ostatnie sprawdzenie: %s"
 
 #: includes/class-maintenance.php:229
 msgid "Leave empty to show the 🔧 emoji. Recommended size: up to 200×80 px."
-msgstr ""
+msgstr "Zostaw puste aby wyświetlić emoji 🔧. Zalecany rozmiar: max 200×80px."
 
 #: includes/class-license.php:281
 msgid "License activated on this domain."
-msgstr ""
+msgstr "Licencja aktywowana na tej domenie."
 
 #: includes/class-license.php:283
 msgid "License checked: valid."
-msgstr ""
+msgstr "Licencja sprawdzona: ważna."
 
 #: includes/class-license.php:282
 msgid "License released — you can use it on another site."
-msgstr ""
+msgstr "Licencja zwolniona — możesz jej użyć na innej stronie."
 
 #: includes/class-license.php:362
 msgid "License server: %s"
-msgstr ""
+msgstr "Serwer licencji: %s"
 
 #: essa-wp-suite.php:213
 msgid "Login colours and CSS"
-msgstr ""
+msgstr "Kolory i CSS logowania"
 
 #: essa-wp-suite.php:219
 msgid "Logins, edits, plugins, settings"
-msgstr ""
+msgstr "Logowania, edycje, wtyczki, ustawienia"
 
 #: includes/class-maintenance.php:175
 msgid "Logo URL (instead of the 🔧 emoji)"
-msgstr ""
+msgstr "URL logo (zamiast emoji 🔧)"
 
 #: essa-wp-suite.php:213
 msgid "Logo on the login page"
-msgstr ""
+msgstr "Logo na stronie logowania"
 
 #: essa-wp-suite.php:602
 msgid "Maintenance Mode is on!"
-msgstr ""
+msgstr "Maintenance Mode jest aktywny!"
 
 #: essa-wp-suite.php:495
 msgid "Maintenance Mode is on! Visitors see the maintenance page."
-msgstr ""
+msgstr "Maintenance Mode jest aktywny! Odwiedzający widzą stronę techniczną."
 
 #: includes/class-maintenance.php:70
 msgid "Maintenance mode ON"
-msgstr ""
+msgstr "Tryb serwisowy WŁĄCZONY"
 
 #: includes/class-maintenance.php:174
 msgid "Message body (HTML allowed)"
-msgstr ""
+msgstr "Treść komunikatu (HTML dozwolony)"
 
 #: includes/class-promo.php:80
 msgid "Missing a feature? We build ESSA WP Suite modules to order: integrations, automations, custom reports. Tell us what you need and we will quote it within 24 h."
-msgstr ""
+msgstr "Brakuje Ci funkcji? Piszemy moduły do ESSA WP Suite pod konkretne potrzeby: integracje, automatyzacje, własne raporty. Opisz, czego potrzebujesz, wycenimy do 24 h."
 
 #: essa-wp-suite.php:436
 msgid "Mixed decimal and hex (recommended)"
-msgstr ""
+msgstr "Mieszany decimal+hex (zalecany)"
 
 #: essa-wp-suite.php:283
 msgid "Moves plugin notices into a panel in the admin bar. Critical errors always stay visible."
-msgstr ""
+msgstr "Chowa powiadomienia wtyczek do panelu w pasku admina. Błędy krytyczne zawsze widoczne."
 
 #: essa-wp-suite.php:390
 msgid "Navigation menus"
-msgstr ""
+msgstr "Menu nawigacyjne"
 
 #: includes/class-promo.php:46
 msgid "Need more than a plugin?"
-msgstr ""
+msgstr "Potrzebujesz więcej niż wtyczki?"
 
 #: includes/class-disable-comments.php:434
 msgid "No comments in the database."
-msgstr ""
+msgstr "Brak komentarzy w bazie danych."
 
 #: includes/class-admin-notices.php:143
 msgid "No hidden notices."
-msgstr ""
+msgstr "Brak ukrytych powiadomień."
 
 #: includes/class-license.php:97
 msgid "No key"
-msgstr ""
+msgstr "Brak klucza"
 
 #: includes/class-license.php:103
 msgid "Not activated on this domain"
-msgstr ""
+msgstr "Nieaktywowana na tej domenie"
 
 #: essa-wp-suite.php:284
 msgid "Notice panel in the admin bar"
-msgstr ""
+msgstr "Panel notices w admin barze"
 
 #: includes/class-license.php:361
 msgid "One key covers the number of sites in your license. Test sites (localhost, *.local, *.test, staging) do not use up slots. Moving a site to a new domain re-activates the key automatically."
-msgstr ""
+msgstr "Jeden klucz = liczba stron z licencji. Strony testowe (localhost, *.local, *.test, staging) nie zużywają miejsc. Przeniesienie strony na nową domenę aktywuje klucz ponownie automatycznie."
 
 #: essa-wp-suite.php:573
 msgid "One license key unlocks every Pro module. After activation the Pro plugin installs with a single click from the License tab."
-msgstr ""
+msgstr "Wszystkie moduły Pro odblokowuje jeden klucz licencji. Po aktywacji wtyczka Pro instaluje się jednym kliknięciem z zakładki Licencja."
 
 #: essa-wp-suite.php:195
 msgid "One-click cleanup"
-msgstr ""
+msgstr "Czyszczenie jednym kliknięciem"
 
 #: includes/class-disable-comments.php:388
 msgid "Only used when scope = \"Selected post types\"."
-msgstr ""
+msgstr "Aktywne tylko gdy zakres = \"Wybrane typy postów\"."
 
 #: includes/class-promo.php:82
 msgid "Order a module"
-msgstr ""
+msgstr "Zamów moduł"
 
 #: essa-wp-suite.php:536
 msgid "PRO"
-msgstr ""
+msgstr "PRO"
 
 #: includes/class-maintenance.php:173
 msgid "Page title"
-msgstr ""
+msgstr "Tytuł strony"
 
 #: includes/class-disable-comments.php:406
 msgid "Pending"
-msgstr ""
+msgstr "Oczekujące"
 
 #: includes/class-disable-comments.php:421
 msgid "Pending only"
-msgstr ""
+msgstr "Tylko oczekujące"
 
 #: includes/class-admin-notices.php:141
 msgid "Plugin notices"
-msgstr ""
+msgstr "Powiadomienia wtyczek"
 
 #: essa-wp-suite.php:207
 msgid "Plugins and themes: force, block or leave to WordPress"
-msgstr ""
+msgstr "Wtyczki i motywy: wymuś / zablokuj / jak w WP"
 
 #: essa-wp-suite.php:386
 msgid "Post and page content"
-msgstr ""
+msgstr "Treść postów/stron"
 
 #: includes/class-disable-comments.php:301
 msgid "Post types (when \"Selected\")"
-msgstr ""
+msgstr "Typy postów (gdy \"Wybrane\")"
 
 #: essa-wp-suite.php:270
 msgid "Preview"
-msgstr ""
+msgstr "Podgląd"
 
 #: includes/class-license.php:286
 msgid "Pro installation failed."
-msgstr ""
+msgstr "Instalacja Pro nie powiodła się."
 
 #: essa-wp-suite.php:349
 #: essa-wp-suite.php:588
 msgid "Pro license"
-msgstr ""
+msgstr "Licencja Pro"
 
 #: essa-wp-suite.php:605
 msgid "Pro license inactive:"
-msgstr ""
+msgstr "Licencja Pro nieaktywna:"
 
 #: includes/class-license.php:301
 msgid "Pro license key"
-msgstr ""
+msgstr "Klucz licencji Pro"
 
 #: essa-wp-suite.php:630
 msgid "Pro module"
-msgstr ""
+msgstr "Moduł Pro"
 
 #: includes/class-license.php:351
 msgid "Pro modules"
-msgstr ""
+msgstr "Moduły Pro"
 
 #: includes/class-promo.php:59
 msgid "Ranking in Google Maps: visibility measured on a grid of points across the city, reviews, photos, posts. From PLN 599 per month."
-msgstr ""
+msgstr "Pozycjonowanie w Mapach Google: pomiar widoczności na siatce punktów w mieście, opinie, zdjęcia, wpisy. Od 599 zł miesięcznie."
 
 #: essa-wp-suite.php:503
 msgid "Really clean up %s? This cannot be undone."
-msgstr ""
+msgstr "Na pewno wyczyścić: %s? Operacja jest nieodwracalna."
 
 #: essa-wp-suite.php:212
 msgid "Rebrand the admin: your own login logo, colours, name and footer."
-msgstr ""
+msgstr "Rebranding panelu: własne logo logowania, kolory, nazwa, stopka."
 
 #: includes/class-license.php:335
 msgid "Release the license on this site? The Pro modules will stop working."
-msgstr ""
+msgstr "Zwolnić licencję na tej stronie? Moduły Pro przestaną działać."
 
 #: essa-wp-suite.php:269
 msgid "Remember to turn maintenance mode off when the work is done!"
-msgstr ""
+msgstr "Pamiętaj o wyłączeniu trybu serwisowego po zakończeniu prac!"
 
 #: includes/class-wp-hardening.php:153
 msgid "Remove &lt;meta name=\"generator\"&gt;"
-msgstr ""
+msgstr "Usuń &lt;meta name=\"generator\"&gt;"
 
 #: includes/class-wp-hardening.php:152
 msgid "Remove ?ver=X from script and style URLs"
-msgstr ""
+msgstr "Usuń ?ver=X z URL skryptów i styli"
 
 #: includes/class-disable-xmlrpc.php:99
 msgid "Remove RSD and wlwmanifest from &lt;head&gt;"
-msgstr ""
+msgstr "Usuń RSD i wlwmanifest z &lt;head&gt;"
 
 #: includes/class-wp-hardening.php:155
 msgid "Remove RSD, wlwmanifest, shortlink and adjacent links from &lt;head&gt;"
-msgstr ""
+msgstr "Usuń RSD, wlwmanifest, shortlink, adjacent z &lt;head&gt;"
 
 #: includes/class-wp-hardening.php:154
 msgid "Remove the WordPress version from RSS"
-msgstr ""
+msgstr "Usuń wersję WP z RSS"
 
 #: includes/class-disable-xmlrpc.php:98
 msgid "Remove the X-Pingback header"
-msgstr ""
+msgstr "Usuń nagłówek X-Pingback"
 
 #: includes/class-wp-hardening.php:157
 msgid "Remove wp-embed.min.js"
-msgstr ""
+msgstr "Usuń wp-embed.min.js"
 
 #: essa-wp-suite.php:276
 msgid "Removes ?ver= from asset URLs"
-msgstr ""
+msgstr "Usuwa ?ver= z URL assetów"
 
 #: essa-wp-suite.php:257
 msgid "Removes X-Pingback, RSD and wlwmanifest"
-msgstr ""
+msgstr "Usuwa X-Pingback, RSD, wlwmanifest"
 
 #: essa-wp-suite.php:249
 msgid "Removes admin menus and widgets"
-msgstr ""
+msgstr "Usuwa menu i widżety admina"
 
 #: essa-wp-suite.php:276
 msgid "Removes the generator meta tag"
-msgstr ""
+msgstr "Usuwa meta generator"
 
 #: essa-wp-suite.php:279
 msgid "Removing ?ver= from asset URLs stops browsers refreshing their cache after updates. If styles break after an update, turn this option off."
-msgstr ""
+msgstr "Usunięcie ?ver= z adresów assetów wyłącza odświeżanie cache przeglądarki po aktualizacjach. Przy problemach ze stylami po update wyłącz tę opcję."
 
 #: essa-wp-suite.php:626
 msgid "Requires Pro"
-msgstr ""
+msgstr "Wymaga Pro"
 
 #: includes/class-maintenance.php:182
 msgid "Retry-After (seconds)"
-msgstr ""
+msgstr "Retry-After (sekundy)"
 
 #: essa-wp-suite.php:195
 msgid "Revision limit per post"
-msgstr ""
+msgstr "Limit rewizji na post"
 
 #: includes/class-license.php:101
 msgid "Revoked"
-msgstr ""
+msgstr "Unieważniona"
 
 #: includes/class-maintenance.php:185
 msgid "Role that bypasses maintenance"
-msgstr ""
+msgstr "Rola pomijająca serwis"
 
 #: includes/class-promo.php:86
 msgid "SEO, Google Business Profile, Google Ads, websites. Free consultation and a quote within 24 h."
-msgstr ""
+msgstr "Pozycjonowanie stron, wizytówka Google, Google Ads, strony WWW. Bezpłatna konsultacja i wycena do 24 h."
 
 #: essa-wp-suite.php:549
 msgid "Save"
-msgstr ""
+msgstr "Zapisz"
 
 #: essa-wp-suite.php:490
 msgid "Saving…"
-msgstr ""
+msgstr "Zapisywanie…"
 
 #: includes/class-disable-comments.php:300
 msgid "Scope"
-msgstr ""
+msgstr "Zakres wyłączenia"
 
 #: includes/class-promo.php:51
 msgid "Search engine optimisation"
-msgstr ""
+msgstr "Pozycjonowanie stron"
 
 #: essa-wp-suite.php:641
 msgid "See it →"
-msgstr ""
+msgstr "Zobacz →"
 
 #: includes/class-promo.php:54
 #: includes/class-promo.php:61
 #: includes/class-promo.php:68
 #: includes/class-promo.php:75
 msgid "See the offer"
-msgstr ""
+msgstr "Zobacz ofertę"
 
 #: includes/class-disable-comments.php:357
 msgid "Selected post types"
-msgstr ""
+msgstr "Wybrane typy postów"
 
 #: essa-wp-suite.php:498
 msgid "Send a test"
-msgstr ""
+msgstr "Wyślij test"
 
 #: essa-wp-suite.php:497
 msgid "Sending…"
-msgstr ""
+msgstr "Wysyłanie…"
 
 #: essa-wp-suite.php:188
 msgid "Sends wp_mail() through a real SMTP server so your email stops landing in spam."
-msgstr ""
+msgstr "Wysyła wp_mail() przez prawdziwy serwer SMTP, żeby maile nie trafiały do spamu."
 
 #: essa-wp-suite.php:360
 msgid "Settings"
-msgstr ""
+msgstr "Ustawienia"
 
 #: essa-wp-suite.php:235
 msgid "Shortcode"
-msgstr ""
+msgstr "Shortcode"
 
 #: essa-wp-suite.php:200
 msgid "Simplifies the admin: hides unneeded menus, dashboard widgets and interface elements."
-msgstr ""
+msgstr "Upraszcza panel: ukrywa zbędne menu, widżety kokpitu i elementy UI."
 
 #: includes/class-license.php:104
 msgid "Site limit reached"
-msgstr ""
+msgstr "Limit stron wyczerpany"
 
 #: includes/class-license.php:317
 msgid "Sites: %1$d of %2$d"
-msgstr ""
+msgstr "Strony: %1$d z %2$d"
 
 #: includes/class-disable-comments.php:407
 msgid "Spam"
-msgstr ""
+msgstr "Spam"
 
 #: includes/class-disable-comments.php:419
 msgid "Spam only"
-msgstr ""
+msgstr "Tylko spam"
 
 #: includes/class-license.php:313
 msgid "Status"
-msgstr ""
+msgstr "Stan"
 
 #: essa-wp-suite.php:189
 msgid "TLS, SSL or none"
-msgstr ""
+msgstr "TLS / SSL / brak"
 
 #: includes/class-maintenance.php:178
 msgid "Text colour"
-msgstr ""
+msgstr "Kolor tekstu"
 
 #: essa-wp-suite.php:389
 msgid "Text widgets"
-msgstr ""
+msgstr "Widżety tekstowe"
 
 #: includes/class-license.php:285
 msgid "That did not work."
-msgstr ""
+msgstr "Nie udało się."
 
 #: essa-wp-suite.php:596
 msgid "The IP address has been unblocked."
-msgstr ""
+msgstr "IP zostało odblokowane."
 
 #: includes/class-license.php:342
 msgid "The Pro plugin is on the server but inactive. Click to activate it (or overwrite it with the latest version)."
-msgstr ""
+msgstr "Wtyczka Pro jest na serwerze, ale nieaktywna. Kliknij, żeby ją aktywować (lub nadpisać najnowszą wersją)."
 
 #: essa-wp-suite.php:231
 msgid "The [encode] shortcode"
-msgstr ""
+msgstr "Shortcode [encode]"
 
 #: includes/class-license.php:171
 msgid "The key looks like EWPS-XXXX-XXXX-XXXX-XXXX."
-msgstr ""
+msgstr "Klucz ma format EWPS-XXXX-XXXX-XXXX-XXXX."
 
 #: includes/class-license.php:343
 msgid "The license is valid. One click downloads the Pro package from the license server and activates the modules."
-msgstr ""
+msgstr "Licencja jest ważna. Jednym kliknięciem pobierzesz paczkę Pro z serwera licencji i aktywujesz moduły."
 
 #: includes/class-license.php:135
 msgid "The license server returned an unreadable response."
-msgstr ""
+msgstr "Serwer licencji zwrócił niezrozumiałą odpowiedź."
 
 #: essa-wp-suite.php:270
 msgid "The preview works even when the module is off. Save your settings before previewing."
-msgstr ""
+msgstr "Podgląd działa także przy wyłączonym module. Zapisz ustawienia przed podglądem."
 
 #: includes/class-disable-comments.php:425
 msgid "This cannot be undone!"
-msgstr ""
+msgstr "Ta operacja jest nieodwracalna!"
 
 #: essa-wp-suite.php:468
 msgid "This module is part of the Pro version."
-msgstr ""
+msgstr "Ten moduł jest w wersji Pro."
 
 #: includes/class-maintenance.php:282
 msgid "This role and above always see the normal site."
-msgstr ""
+msgstr "Ta rola i wyższe zawsze widzą normalną stronę."
 
 #: includes/class-maintenance.php:184
 msgid "This site sits behind a proxy or Cloudflare"
-msgstr ""
+msgstr "Strona jest za proxy / Cloudflare"
 
 #: essa-wp-suite.php:654
 msgid "To unlock"
-msgstr ""
+msgstr "Do odblokowania"
 
 #: includes/class-disable-comments.php:409
 msgid "Total"
-msgstr ""
+msgstr "Łącznie"
 
 #: includes/class-disable-comments.php:408
 msgid "Trash"
-msgstr ""
+msgstr "Kosz"
 
 #: includes/class-disable-comments.php:420
 msgid "Trash only"
-msgstr ""
+msgstr "Tylko kosz"
 
 #: includes/class-maintenance.php:220
 msgid "Turn this on only behind Cloudflare or a reverse proxy — the IP whitelist then reads the address from proxy headers."
-msgstr ""
+msgstr "Włącz tylko za Cloudflare / reverse proxy — wtedy whitelist IP porównuje adres z nagłówków proxy."
 
 #: essa-wp-suite.php:256
 msgid "Turns XML-RPC off completely. Blocks brute-force attacks through xmlrpc.php."
-msgstr ""
+msgstr "Całkowite wyłączenie XML-RPC. Blokuje brute-force przez xmlrpc.php."
 
 #: essa-wp-suite.php:248
 msgid "Turns comments off site-wide or per post type. Cleans up the admin interface."
-msgstr ""
+msgstr "Wyłącza komentarze na całej stronie lub per typ postu. Czyści UI admina."
 
 #: includes/class-license.php:106
 msgid "Unknown"
-msgstr ""
+msgstr "Nieznany"
 
 #: essa-wp-suite.php:466
 msgid "Unknown module."
-msgstr ""
+msgstr "Nieznany moduł."
 
 #: essa-wp-suite.php:677
 msgid "Unknown tab."
-msgstr ""
+msgstr "Nieznana zakładka."
 
 #: essa-wp-suite.php:658
 msgid "Unlock 7 Pro modules with one key →"
-msgstr ""
+msgstr "Odblokuj 7 modułów Pro jednym kluczem →"
 
 #: includes/class-license.php:316
 msgid "Valid until: %s"
-msgstr ""
+msgstr "Ważna do: %s"
 
 #: essa-wp-suite.php:655
 msgid "Version"
-msgstr ""
+msgstr "Wersja"
 
 #: essa-wp-suite.php:270
 msgid "View the maintenance page →"
-msgstr ""
+msgstr "Zobacz stronę serwisową →"
 
 #: essa-wp-suite.php:602
 msgid "Visitors see the maintenance page."
-msgstr ""
+msgstr "Odwiedzający widzą stronę techniczną."
 
 #: includes/class-promo.php:72
 msgid "Websites"
-msgstr ""
+msgstr "Strony internetowe"
 
 #: essa-wp-suite.php:195
 msgid "Weekly automatic cleanup"
-msgstr ""
+msgstr "Auto-cleanup co tydzień"
 
 #: essa-wp-suite.php:375
 msgid "What to filter"
-msgstr ""
+msgstr "Co filtrować?"
 
 #: essa-wp-suite.php:284
 msgid "Whitelist — chosen notices always visible"
-msgstr ""
+msgstr "Whitelist — wybrane zawsze widoczne"
 
 #: essa-wp-suite.php:287
 msgid "Whitelist: CSS classes of notices that should always stay visible (for example woocommerce-message)."
-msgstr ""
+msgstr "Whitelist: klasy CSS powiadomień, które mają być zawsze widoczne (np. woocommerce-message)."
 
 #: includes/class-promo.php:73
 msgid "WordPress and Elementor, fast and SEO-ready from day one. With this plugin on board."
-msgstr ""
+msgstr "WordPress i Elementor, szybkie i gotowe pod SEO od pierwszego dnia. Z tą wtyczką na pokładzie."
 
 #: essa-wp-suite.php:276
 msgid "X-Frame-Options, nosniff, Referrer-Policy"
-msgstr ""
+msgstr "X-Frame-Options, nosniff, Referrer-Policy"
 
 #: includes/class-license.php:229
 msgid "You do not have permission to install plugins."
-msgstr ""
+msgstr "Brak uprawnień do instalacji wtyczek."
 
 #: essa-wp-suite.php:462
 msgid "You do not have permission."
-msgstr ""
+msgstr "Brak uprawnień."
 
 #: essa-wp-suite.php:494
 #: essa-wp-suite.php:534
 msgid "active"
-msgstr ""
+msgstr "aktywnych"
 
 #: includes/class-license.php:319
 msgid "ago"
-msgstr ""
+msgstr "temu"
 
 #: essa-wp-suite.php:41
 msgid "requires PHP %1$s (you have %2$s) and WordPress %3$s (you have %4$s). Modules were not loaded."
-msgstr ""
+msgstr "wymagane PHP %1$s (masz %2$s) i WordPress %3$s (masz %4$s). Moduły nie zostały załadowane."
 
 #: includes/class-promo.php:180
 msgid "thanks for installing! You switch modules on from the plugin dashboard. Need SEO, advertising or a module built to order?"
-msgstr ""
+msgstr "dzięki za instalację! Moduły włączasz na dashboardzie wtyczki. Potrzebujesz pozycjonowania, reklam albo modułu na życzenie?"
 
 #: essa-wp-suite.php:501
 msgid "unknown"
-msgstr ""
-
+msgstr "nieznany"

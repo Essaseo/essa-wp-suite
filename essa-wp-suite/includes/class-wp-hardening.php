@@ -148,14 +148,14 @@ class ESSA_WP_Hardening {
         add_settings_section( 'ewps_hard_main', '', '__return_false', 'ewps-hard-settings' );
 
         $fields = array(
-            'hard_enabled'           => __( 'Włącz moduł', 'essa-wp-suite' ),
-            'hard_remove_version'    => __( 'Usuń ?ver=X z URL skryptów i styli', 'essa-wp-suite' ),
-            'hard_remove_generator'  => __( 'Usuń &lt;meta name="generator"&gt;', 'essa-wp-suite' ),
-            'hard_remove_rss_ver'    => __( 'Usuń wersję WP z RSS', 'essa-wp-suite' ),
-            'hard_remove_head_links' => __( 'Usuń RSD, wlwmanifest, shortlink, adjacent z &lt;head&gt;', 'essa-wp-suite' ),
-            'hard_disable_emoji'     => __( 'Wyłącz skrypty emoji WP (szybszy frontend)', 'essa-wp-suite' ),
-            'hard_remove_wp_embed'   => __( 'Usuń wp-embed.min.js', 'essa-wp-suite' ),
-            'hard_security_headers'  => __( 'Dodaj Security Headers (X-Frame-Options, nosniff, …)', 'essa-wp-suite' ),
+            'hard_enabled'           => __( 'Enable module', 'essa-wp-suite' ),
+            'hard_remove_version'    => __( 'Remove ?ver=X from script and style URLs', 'essa-wp-suite' ),
+            'hard_remove_generator'  => __( 'Remove &lt;meta name="generator"&gt;', 'essa-wp-suite' ),
+            'hard_remove_rss_ver'    => __( 'Remove the WordPress version from RSS', 'essa-wp-suite' ),
+            'hard_remove_head_links' => __( 'Remove RSD, wlwmanifest, shortlink and adjacent links from &lt;head&gt;', 'essa-wp-suite' ),
+            'hard_disable_emoji'     => __( 'Disable WordPress emoji scripts (faster front end)', 'essa-wp-suite' ),
+            'hard_remove_wp_embed'   => __( 'Remove wp-embed.min.js', 'essa-wp-suite' ),
+            'hard_security_headers'  => __( 'Add security headers (X-Frame-Options, nosniff, …)', 'essa-wp-suite' ),
         );
 
         foreach ( $fields as $id => $label ) {

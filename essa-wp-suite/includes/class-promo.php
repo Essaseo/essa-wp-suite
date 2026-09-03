@@ -43,52 +43,52 @@ class ESSA_Promo {
     /** Wbudowana treść — używana, gdy serwer nie odpowiada. */
     public static function defaults() {
         return array(
-            'headline' => __( 'Potrzebujesz więcej niż wtyczki?', 'essa-wp-suite' ),
-            'intro'    => __( 'ESSA WP Suite to narzędzia, których używamy na stronach klientów. Samą stronę też możemy wypozycjonować, zbudować albo obsłużyć jej reklamy.', 'essa-wp-suite' ),
+            'headline' => __( 'Need more than a plugin?', 'essa-wp-suite' ),
+            'intro'    => __( 'ESSA WP Suite is the toolkit we run on client sites. We can also rank, build or advertise the site itself.', 'essa-wp-suite' ),
             'services' => array(
                 array(
                     'icon'  => '📈',
-                    'title' => __( 'Pozycjonowanie stron', 'essa-wp-suite' ),
-                    'text'  => __( 'Audyt i plan prac za darmo, wycena do 24 h. Prowadzenie od 1500 zł netto miesięcznie, umowa 3 miesiące, potem miesięczne wypowiedzenie.', 'essa-wp-suite' ),
+                    'title' => __( 'Search engine optimisation', 'essa-wp-suite' ),
+                    'text'  => __( 'Free audit and action plan, quote within 24 h. Ongoing work from PLN 1,500 net per month, three-month contract, then one month\'s notice.', 'essa-wp-suite' ),
                     'url'   => 'https://essaseo.pl/pozycjonowanie-stron-internetowych/',
-                    'cta'   => __( 'Zobacz ofertę', 'essa-wp-suite' ),
+                    'cta'   => __( 'See the offer', 'essa-wp-suite' ),
                 ),
                 array(
                     'icon'  => '📍',
-                    'title' => __( 'Wizytówka Google', 'essa-wp-suite' ),
-                    'text'  => __( 'Pozycjonowanie w Mapach Google: pomiar widoczności na siatce punktów w mieście, opinie, zdjęcia, wpisy. Od 599 zł miesięcznie.', 'essa-wp-suite' ),
+                    'title' => __( 'Google Business Profile', 'essa-wp-suite' ),
+                    'text'  => __( 'Ranking in Google Maps: visibility measured on a grid of points across the city, reviews, photos, posts. From PLN 599 per month.', 'essa-wp-suite' ),
                     'url'   => 'https://essaseo.pl/pozycjonowanie-wizytowki-google-seo-dla-google-maps/',
-                    'cta'   => __( 'Zobacz ofertę', 'essa-wp-suite' ),
+                    'cta'   => __( 'See the offer', 'essa-wp-suite' ),
                 ),
                 array(
                     'icon'  => '🎯',
-                    'title' => __( 'Google Ads i Meta Ads', 'essa-wp-suite' ),
-                    'text'  => __( 'Kampanie z budżetem wpłacanym bezpośrednio do Google i Meta. Stała opłata od 500 zł plus prowizja od budżetu, dwie kreacje na start i nowa co miesiąc.', 'essa-wp-suite' ),
+                    'title' => __( 'Google Ads and Meta Ads', 'essa-wp-suite' ),
+                    'text'  => __( 'Campaigns with the budget paid straight to Google and Meta. Flat fee from PLN 500 plus a percentage of the budget, two creatives to start and a new one every month.', 'essa-wp-suite' ),
                     'url'   => 'https://essaseo.pl/google-ads-meta-ads/',
-                    'cta'   => __( 'Zobacz ofertę', 'essa-wp-suite' ),
+                    'cta'   => __( 'See the offer', 'essa-wp-suite' ),
                 ),
                 array(
                     'icon'  => '🧱',
-                    'title' => __( 'Strony internetowe', 'essa-wp-suite' ),
-                    'text'  => __( 'WordPress i Elementor, szybkie i gotowe pod SEO od pierwszego dnia. Z tą wtyczką na pokładzie.', 'essa-wp-suite' ),
+                    'title' => __( 'Websites', 'essa-wp-suite' ),
+                    'text'  => __( 'WordPress and Elementor, fast and SEO-ready from day one. With this plugin on board.', 'essa-wp-suite' ),
                     'url'   => 'https://essaseo.pl/tworzenie-stron-internetowych/',
-                    'cta'   => __( 'Zobacz ofertę', 'essa-wp-suite' ),
+                    'cta'   => __( 'See the offer', 'essa-wp-suite' ),
                 ),
             ),
             'custom'   => array(
-                'title' => __( 'Moduł na życzenie', 'essa-wp-suite' ),
-                'text'  => __( 'Brakuje Ci funkcji? Piszemy moduły do ESSA WP Suite pod konkretne potrzeby: integracje, automatyzacje, własne raporty. Opisz, czego potrzebujesz, wycenimy do 24 h.', 'essa-wp-suite' ),
+                'title' => __( 'Custom module', 'essa-wp-suite' ),
+                'text'  => __( 'Missing a feature? We build ESSA WP Suite modules to order: integrations, automations, custom reports. Tell us what you need and we will quote it within 24 h.', 'essa-wp-suite' ),
                 'url'   => 'https://essaseo.pl/kontakt/?temat=modul-essa-wp-suite',
-                'cta'   => __( 'Zamów moduł', 'essa-wp-suite' ),
+                'cta'   => __( 'Order a module', 'essa-wp-suite' ),
             ),
             'sidebar'  => array(
                 'title' => __( 'ESSA SEO', 'essa-wp-suite' ),
-                'text'  => __( 'Pozycjonowanie stron, wizytówka Google, Google Ads, strony WWW. Bezpłatna konsultacja i wycena do 24 h.', 'essa-wp-suite' ),
+                'text'  => __( 'SEO, Google Business Profile, Google Ads, websites. Free consultation and a quote within 24 h.', 'essa-wp-suite' ),
                 'url'   => 'https://essaseo.pl/kontakt/?temat=wtyczka',
-                'cta'   => __( 'Bezpłatna konsultacja', 'essa-wp-suite' ),
+                'cta'   => __( 'Free consultation', 'essa-wp-suite' ),
             ),
             'blog'     => array(
-                'title' => __( 'Blog ESSA SEO', 'essa-wp-suite' ),
+                'title' => __( 'ESSA SEO blog', 'essa-wp-suite' ),
                 'url'   => 'https://essaseo.pl/blog/',
             ),
         );
@@ -177,10 +177,10 @@ class ESSA_Promo {
         $dismiss = wp_nonce_url( add_query_arg( 'ewps_dismiss_welcome', '1' ), 'ewps_dismiss_welcome' );
         ?>
         <div class="notice notice-info ewps-welcome">
-            <p><strong>ESSA WP Suite</strong> — <?php esc_html_e( 'dzięki za instalację! Moduły włączasz na dashboardzie wtyczki. Potrzebujesz pozycjonowania, reklam albo modułu na życzenie?', 'essa-wp-suite' ); ?>
+            <p><strong>ESSA WP Suite</strong> — <?php esc_html_e( 'thanks for installing! You switch modules on from the plugin dashboard. Need SEO, advertising or a module built to order?', 'essa-wp-suite' ); ?>
                 <a href="<?php echo esc_url( ESSA_Suite_Utils::tab_url() ); ?>"><?php esc_html_e( 'Dashboard', 'essa-wp-suite' ); ?></a> ·
-                <a href="<?php echo self::url( 'https://essaseo.pl/kontakt/?temat=wtyczka' ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Bezpłatna konsultacja ESSA SEO', 'essa-wp-suite' ); ?></a> ·
-                <a href="<?php echo esc_url( $dismiss ); ?>"><?php esc_html_e( 'Nie pokazuj więcej', 'essa-wp-suite' ); ?></a>
+                <a href="<?php echo self::url( 'https://essaseo.pl/kontakt/?temat=wtyczka' ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Free consultation with ESSA SEO', 'essa-wp-suite' ); ?></a> ·
+                <a href="<?php echo esc_url( $dismiss ); ?>"><?php esc_html_e( 'Do not show again', 'essa-wp-suite' ); ?></a>
             </p>
         </div>
         <?php

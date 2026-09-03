@@ -1,10 +1,10 @@
 === ESSA WP Suite ===
 Contributors: essaseo
-Tags: security, login, maintenance, smtp, comments, xml-rpc, hardening, activity log, white label
+Tags: security, maintenance mode, email encoder, disable comments, hardening
 Requires at least: 5.6
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 2.1.0
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,10 @@ ESSA WP Suite zastępuje kilkanaście małych wtyczek jednym panelem. Każdy mod
 * **Auto Updates** — core minor/major, wtyczki i motywy (wymuś / zablokuj / jak w WP), tłumaczenia, maile.
 * **White Label** — logo i kolory logowania, własna nazwa wtyczki w menu, ukrycie brandingu WordPress.
 * **Activity Log** — logowania, wpisy, wtyczki, opcje, użytkownicy; eksport CSV; retencja.
+
+**Języki**
+
+Interfejs wtyczki jest po angielsku i po polsku. Język idzie za ustawieniem WordPressa (Ustawienia → Ogólne → Język witryny) — na polskiej instalacji panel wtyczki jest polski, na angielskiej angielski. Tłumaczenie polskie jest w paczce (`languages/essa-wp-suite-pl_PL.mo`), nic nie trzeba dogrywać.
 
 **Stałe w wp-config.php**
 
@@ -75,6 +79,10 @@ Usuwa tylko wygasłe. Aktywne transjenty to cache, którego skasowanie spowolni�
 Tak, per strona. Odinstalowanie czyści dane na wszystkich stronach sieci.
 
 == Changelog ==
+
+= 2.2.0 =
+* Wtyczka mówi po angielsku i po polsku. Teksty źródłowe przepisane na angielski, polskie tłumaczenie dołączone jako plik .mo — panel dobiera język do ustawień WordPressa.
+* Narzędzie `narzedzia/i18n.py` do utrzymania tłumaczeń bez gettexta w systemie.
 
 = 2.1.0 =
 * Dodano: sekcja usług ESSA SEO i „Moduł na życzenie” na dashboardzie, karta w sidebarze, jednorazowe powiadomienie powitalne (do wyłączenia jednym kliknięciem).

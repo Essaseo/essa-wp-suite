@@ -5,6 +5,17 @@ Format: [Semantic Versioning](https://semver.org/) — MAJOR.MINOR.PATCH
 
 ---
 
+## [2.2.0] — 2026-09-03
+
+### Zmieniono
+- **Dwa języki interfejsu.** Teksty źródłowe przepisane z polskiego na angielski (standard WordPressa), polskie tłumaczenie dołączone jako `languages/essa-wp-suite-pl_PL.po` i `.mo`. Panel dobiera język do ustawienia witryny; przy `pl_PL` wygląda dokładnie jak wcześniej.
+- Nagłówek wtyczki (Description) po angielsku — warunek publikacji na wordpress.org.
+
+### Dodano
+- `narzedzia/i18n.py` — ekstrakcja tekstów, podmiana w kodzie, budowa `.po` i `.mo` (własny kompilator, bez gettexta w systemie), kontrola pozostałości: `apply`, `po`, `check`.
+
+---
+
 ## [2.1.0] — 2026-09-03
 
 ### Dodano

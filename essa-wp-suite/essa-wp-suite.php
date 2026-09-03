@@ -2,8 +2,8 @@
 /**
  * Plugin Name:       ESSA WP Suite
  * Plugin URI:        https://essaseo.pl/essa-wp-suite/
- * Description:       Zestaw narzędzi administracyjnych WordPress od ESSA SEO: Email Encoder, Disable Comments, Disable XML-RPC, WP Hardening, Admin Notices, Maintenance Mode. Wersja Pro dodaje Login Security, SMTP, DB Cleaner, Admin Cleaner, Auto Updates, White Label i Activity Log.
- * Version:           2.1.0
+ * Description:       A WordPress admin toolkit by ESSA SEO: Email Encoder, Disable Comments, Disable XML-RPC, WP Hardening, Admin Notices and Maintenance Mode. The Pro version adds Login Security, SMTP Mailer, DB Cleaner, Admin Cleaner, Auto Updates, White Label and Activity Log. Ships with Polish and English interface.
+ * Version:           2.2.0
  * Author:            ESSA SEO Digital Agency
  * Author URI:        https://essaseo.pl
  * License:           GPL-2.0-or-later
@@ -17,7 +17,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'EWPS_VERSION',     '2.1.0' );
+define( 'EWPS_VERSION',     '2.2.0' );
 define( 'EWPS_MIN_PHP',     '7.2' );
 define( 'EWPS_MIN_WP',      '5.6' );
 define( 'EWPS_PLUGIN_FILE', __FILE__ );
@@ -38,7 +38,7 @@ function ewps_requirements_notice() {
     echo '<div class="notice notice-error"><p><strong>ESSA WP Suite</strong>: '
         . sprintf(
             /* translators: 1: min PHP, 2: current PHP, 3: min WP, 4: current WP */
-            esc_html__( 'wymagane PHP %1$s (masz %2$s) i WordPress %3$s (masz %4$s). Moduły nie zostały załadowane.', 'essa-wp-suite' ),
+            esc_html__( 'requires PHP %1$s (you have %2$s) and WordPress %3$s (you have %4$s). Modules were not loaded.', 'essa-wp-suite' ),
             esc_html( EWPS_MIN_PHP ), esc_html( PHP_VERSION ), esc_html( EWPS_MIN_WP ), esc_html( $wp_version )
         )
         . '</p></div>';
@@ -179,44 +179,44 @@ class ESSA_WP_Suite {
         return array(
             'login' => array(
                 'id' => 'login', 'icon' => '🔒', 'label' => 'Login Security', 'tab' => 'login', 'color' => '#f59e0b',
-                'description' => __( 'Własny adres logowania, ukrycie /wp-login.php i limit prób z blokadą IP.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Własny slug logowania', 'essa-wp-suite' ), __( 'Ukrycie /wp-login.php', 'essa-wp-suite' ), __( 'Limit prób + blokada IP', 'essa-wp-suite' ) ),
+                'description' => __( 'A custom login URL, hidden /wp-login.php and an attempt limit with IP lockout.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Custom login slug', 'essa-wp-suite' ), __( 'Hides /wp-login.php', 'essa-wp-suite' ), __( 'Attempt limit and IP lockout', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_ls_settings', 'toggle_key' => 'ls_enabled',
             ),
             'smtp' => array(
                 'id' => 'smtp', 'icon' => '📧', 'label' => 'SMTP Mailer', 'tab' => 'smtp', 'color' => '#0ea5e9',
-                'description' => __( 'Wysyła wp_mail() przez prawdziwy serwer SMTP, żeby maile nie trafiały do spamu.', 'essa-wp-suite' ),
-                'features'    => array( __( 'TLS / SSL / brak', 'essa-wp-suite' ), __( 'Własny nadawca From', 'essa-wp-suite' ), __( 'Presety Gmail, OVH, Brevo', 'essa-wp-suite' ) ),
+                'description' => __( 'Sends wp_mail() through a real SMTP server so your email stops landing in spam.', 'essa-wp-suite' ),
+                'features'    => array( __( 'TLS, SSL or none', 'essa-wp-suite' ), __( 'Custom From sender', 'essa-wp-suite' ), __( 'Gmail, OVH and Brevo presets', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_smtp_settings', 'toggle_key' => 'smtp_enabled',
             ),
             'db' => array(
                 'id' => 'db', 'icon' => '🗑️', 'label' => 'DB Cleaner', 'tab' => 'db', 'color' => '#10b981',
-                'description' => __( 'Czyści bazę: rewizje, wygasłe transjenty, auto-drafty, spam, osierocone meta.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Czyszczenie jednym kliknięciem', 'essa-wp-suite' ), __( 'Limit rewizji na post', 'essa-wp-suite' ), __( 'Auto-cleanup co tydzień', 'essa-wp-suite' ) ),
+                'description' => __( 'Cleans the database: revisions, expired transients, auto-drafts, spam, orphaned meta.', 'essa-wp-suite' ),
+                'features'    => array( __( 'One-click cleanup', 'essa-wp-suite' ), __( 'Revision limit per post', 'essa-wp-suite' ), __( 'Weekly automatic cleanup', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_db_settings', 'toggle_key' => 'db_enabled',
             ),
             'admin_cleaner' => array(
                 'id' => 'admin_cleaner', 'icon' => '🧹', 'label' => 'Admin Cleaner', 'tab' => 'admin_cleaner', 'color' => '#f59e0b',
-                'description' => __( 'Upraszcza panel: ukrywa zbędne menu, widżety kokpitu i elementy UI.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Ukryj pozycje menu', 'essa-wp-suite' ), __( 'Ukryj widżety kokpitu', 'essa-wp-suite' ), __( 'Własna stopka admina', 'essa-wp-suite' ) ),
+                'description' => __( 'Simplifies the admin: hides unneeded menus, dashboard widgets and interface elements.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Hide menu items', 'essa-wp-suite' ), __( 'Hide dashboard widgets', 'essa-wp-suite' ), __( 'Custom admin footer', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_ac_settings', 'toggle_key' => 'ac_enabled',
             ),
             'auto_updates' => array(
                 'id' => 'auto_updates', 'icon' => '🔄', 'label' => 'Auto Updates', 'tab' => 'auto_updates', 'color' => '#6366f1',
-                'description' => __( 'Kontrola automatycznych aktualizacji WP core, wtyczek i motywów.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Core major/minor osobno', 'essa-wp-suite' ), __( 'Wtyczki i motywy: wymuś / zablokuj / jak w WP', 'essa-wp-suite' ), __( 'Email po aktualizacji', 'essa-wp-suite' ) ),
+                'description' => __( 'Control automatic updates of WordPress core, plugins and themes.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Core major and minor separately', 'essa-wp-suite' ), __( 'Plugins and themes: force, block or leave to WordPress', 'essa-wp-suite' ), __( 'Email after an update', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_au_settings', 'toggle_key' => 'au_enabled',
             ),
             'white_label' => array(
                 'id' => 'white_label', 'icon' => '🏷️', 'label' => 'White Label', 'tab' => 'white_label', 'color' => '#ec4899',
-                'description' => __( 'Rebranding panelu: własne logo logowania, kolory, nazwa, stopka.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Logo na stronie logowania', 'essa-wp-suite' ), __( 'Kolory i CSS logowania', 'essa-wp-suite' ), __( 'Ukryj branding WordPress', 'essa-wp-suite' ) ),
+                'description' => __( 'Rebrand the admin: your own login logo, colours, name and footer.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Logo on the login page', 'essa-wp-suite' ), __( 'Login colours and CSS', 'essa-wp-suite' ), __( 'Hide WordPress branding', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_wl_settings', 'toggle_key' => 'wl_enabled',
             ),
             'activity' => array(
                 'id' => 'activity', 'icon' => '📋', 'label' => 'Activity Log', 'tab' => 'activity', 'color' => '#64748b',
-                'description' => __( 'Log akcji użytkowników: kto, co i kiedy zmienił, zalogował się, zainstalował.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Logowania, edycje, wtyczki, ustawienia', 'essa-wp-suite' ), __( 'Eksport do CSV', 'essa-wp-suite' ), __( 'Konfigurowalny czas przechowywania', 'essa-wp-suite' ) ),
+                'description' => __( 'A log of user actions: who changed, logged in or installed what, and when.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Logins, edits, plugins, settings', 'essa-wp-suite' ), __( 'Export to CSV', 'essa-wp-suite' ), __( 'Configurable retention period', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_log_settings', 'toggle_key' => 'log_enabled',
             ),
         );
@@ -227,8 +227,8 @@ class ESSA_WP_Suite {
         return array(
             'encoder' => array(
                 'id' => 'encoder', 'icon' => '✉', 'label' => 'Email Encoder', 'tab' => 'encoder', 'color' => '#2CFFC0',
-                'description' => __( 'Koduje adresy email do encji HTML. Boty spamowe ich nie odczytają, przeglądarka wyświetla normalnie. Działa bez JS.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Kodowanie decimal/hex/mixed', 'essa-wp-suite' ), __( 'Hooki: treść, zajawki, widżety, menu', 'essa-wp-suite' ), __( 'Shortcode [encode]', 'essa-wp-suite' ) ),
+                'description' => __( 'Encodes email addresses into HTML entities. Spam bots cannot read them, browsers show them normally. Works without JavaScript.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Decimal, hex or mixed encoding', 'essa-wp-suite' ), __( 'Hooks: content, excerpts, widgets, menus', 'essa-wp-suite' ), __( 'The [encode] shortcode', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_enc_settings', 'toggle_key' => 'enc_enabled',
                 'group' => 'ewps_enc_settings_group', 'page' => 'ewps-enc-settings',
                 'sidebar' => function() { ?>
@@ -236,55 +236,55 @@ class ESSA_WP_Suite {
 [encode link="mailto:email@domena.pl"]Napisz do nas[/encode]
 [encode link="tel:+48123456789"]+48 123 456 789[/encode]</pre></div>
                     <div class="ewps-card ewps-card--test">
-                        <h3><?php esc_html_e( 'Test kodowania', 'essa-wp-suite' ); ?></h3>
+                        <h3><?php esc_html_e( 'Encoding test', 'essa-wp-suite' ); ?></h3>
                         <input type="text" id="ewps-test-input" placeholder="email@domena.pl" class="regular-text">
-                        <button type="button" id="ewps-test-btn" class="button"><?php esc_html_e( 'Koduj', 'essa-wp-suite' ); ?></button>
+                        <button type="button" id="ewps-test-btn" class="button"><?php esc_html_e( 'Encode', 'essa-wp-suite' ); ?></button>
                         <pre id="ewps-test-output" style="display:none;margin-top:10px;white-space:pre-wrap;word-break:break-all"></pre>
                     </div>
                 <?php },
             ),
             'comments' => array(
                 'id' => 'comments', 'icon' => '💬', 'label' => 'Disable Comments', 'tab' => 'comments', 'color' => '#722BF5',
-                'description' => __( 'Wyłącza komentarze na całej stronie lub per typ postu. Czyści UI admina.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Globalnie lub per typ postu', 'essa-wp-suite' ), __( 'Usuwa menu i widżety admina', 'essa-wp-suite' ), __( 'Blokuje REST API i XML-RPC', 'essa-wp-suite' ) ),
+                'description' => __( 'Turns comments off site-wide or per post type. Cleans up the admin interface.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Globally or per post type', 'essa-wp-suite' ), __( 'Removes admin menus and widgets', 'essa-wp-suite' ), __( 'Blocks REST API and XML-RPC', 'essa-wp-suite' ) ),
                 'option_key'  => 'eee_dc_settings', 'toggle_key' => 'dc_enabled',
                 'group' => 'eee_dc_settings_group', 'page' => 'eee-dc-settings',
                 'sidebar' => array( ESSA_Disable_Comments::get_instance(), 'delete_comments_tool_html' ),
             ),
             'xmlrpc' => array(
                 'id' => 'xmlrpc', 'icon' => '⛔', 'label' => 'Disable XML-RPC', 'tab' => 'xmlrpc', 'color' => '#ef4444',
-                'description' => __( 'Całkowite wyłączenie XML-RPC. Blokuje brute-force przez xmlrpc.php.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Filtr xmlrpc_enabled → false', 'essa-wp-suite' ), __( 'Blokada endpointu 403', 'essa-wp-suite' ), __( 'Usuwa X-Pingback, RSD, wlwmanifest', 'essa-wp-suite' ) ),
+                'description' => __( 'Turns XML-RPC off completely. Blocks brute-force attacks through xmlrpc.php.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Filter xmlrpc_enabled → false', 'essa-wp-suite' ), __( 'Endpoint blocked with 403', 'essa-wp-suite' ), __( 'Removes X-Pingback, RSD and wlwmanifest', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_xmlrpc_settings', 'toggle_key' => 'xmlrpc_enabled',
                 'group' => 'ewps_xmlrpc_settings_group', 'page' => 'ewps-xmlrpc-settings',
-                'sidebar' => function() use ( $self ) { $self->sidebar_tip( __( 'Jetpack i aplikacja mobilna WordPress wymagają XML-RPC. Sprawdź przed wyłączeniem.', 'essa-wp-suite' ) ); },
+                'sidebar' => function() use ( $self ) { $self->sidebar_tip( __( 'Jetpack and the WordPress mobile app need XML-RPC. Check before turning it off.', 'essa-wp-suite' ) ); },
             ),
             'maintenance' => array(
                 'id' => 'maintenance', 'icon' => '🚧', 'label' => 'Maintenance Mode', 'tab' => 'maintenance', 'color' => '#f97316',
-                'description' => __( 'Strona serwisowa 503 dla odwiedzających. Admini widzą normalną stronę.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Własny tytuł i treść HTML', 'essa-wp-suite' ), __( 'Whitelist IP', 'essa-wp-suite' ), __( 'Nagłówek 503 + Retry-After', 'essa-wp-suite' ) ),
+                'description' => __( 'A 503 maintenance page for visitors. Administrators still see the normal site.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Custom title and HTML body', 'essa-wp-suite' ), __( 'IP whitelist', 'essa-wp-suite' ), __( '503 header with Retry-After', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_maint_settings', 'toggle_key' => 'maint_enabled',
                 'group' => 'ewps_maint_settings_group', 'page' => 'ewps-maint-settings',
                 'sidebar' => function() use ( $self ) {
-                    $self->sidebar_tip( __( 'Pamiętaj o wyłączeniu trybu serwisowego po zakończeniu prac!', 'essa-wp-suite' ) );
-                    echo '<div class="ewps-card"><h3>' . esc_html__( 'Podgląd', 'essa-wp-suite' ) . '</h3><p><a href="' . esc_url( home_url( '/?ewps_preview_maintenance=1' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'Zobacz stronę serwisową →', 'essa-wp-suite' ) . '</a></p><p class="description">' . esc_html__( 'Podgląd działa także przy wyłączonym module. Zapisz ustawienia przed podglądem.', 'essa-wp-suite' ) . '</p></div>';
+                    $self->sidebar_tip( __( 'Remember to turn maintenance mode off when the work is done!', 'essa-wp-suite' ) );
+                    echo '<div class="ewps-card"><h3>' . esc_html__( 'Preview', 'essa-wp-suite' ) . '</h3><p><a href="' . esc_url( home_url( '/?ewps_preview_maintenance=1' ) ) . '" target="_blank" rel="noopener">' . esc_html__( 'View the maintenance page →', 'essa-wp-suite' ) . '</a></p><p class="description">' . esc_html__( 'The preview works even when the module is off. Save your settings before previewing.', 'essa-wp-suite' ) . '</p></div>';
                 },
             ),
             'hardening' => array(
                 'id' => 'hardening', 'icon' => '🛡️', 'label' => 'WP Hardening', 'tab' => 'hardening', 'color' => '#3b82f6',
-                'description' => __( 'Ukrywa wersję WP, wyłącza emoji, dodaje nagłówki bezpieczeństwa.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Usuwa ?ver= z URL assetów', 'essa-wp-suite' ), __( 'Usuwa meta generator', 'essa-wp-suite' ), __( 'X-Frame-Options, nosniff, Referrer-Policy', 'essa-wp-suite' ) ),
+                'description' => __( 'Hides the WordPress version, disables emoji scripts, adds security headers.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Removes ?ver= from asset URLs', 'essa-wp-suite' ), __( 'Removes the generator meta tag', 'essa-wp-suite' ), __( 'X-Frame-Options, nosniff, Referrer-Policy', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_hard_settings', 'toggle_key' => 'hard_enabled',
                 'group' => 'ewps_hard_settings_group', 'page' => 'ewps-hard-settings',
-                'sidebar' => function() use ( $self ) { $self->sidebar_tip( __( 'Usunięcie ?ver= z adresów assetów wyłącza odświeżanie cache przeglądarki po aktualizacjach. Przy problemach ze stylami po update wyłącz tę opcję.', 'essa-wp-suite' ) ); },
+                'sidebar' => function() use ( $self ) { $self->sidebar_tip( __( 'Removing ?ver= from asset URLs stops browsers refreshing their cache after updates. If styles break after an update, turn this option off.', 'essa-wp-suite' ) ); },
             ),
             'notices' => array(
                 'id' => 'notices', 'icon' => '🔕', 'label' => 'Admin Notices', 'tab' => 'notices', 'color' => '#8b5cf6',
-                'description' => __( 'Chowa powiadomienia wtyczek do panelu w pasku admina. Błędy krytyczne zawsze widoczne.', 'essa-wp-suite' ),
-                'features'    => array( __( 'Panel notices w admin barze', 'essa-wp-suite' ), __( 'Blokada popupów wtyczek', 'essa-wp-suite' ), __( 'Whitelist — wybrane zawsze widoczne', 'essa-wp-suite' ) ),
+                'description' => __( 'Moves plugin notices into a panel in the admin bar. Critical errors always stay visible.', 'essa-wp-suite' ),
+                'features'    => array( __( 'Notice panel in the admin bar', 'essa-wp-suite' ), __( 'Blocks plugin pop-ups', 'essa-wp-suite' ), __( 'Whitelist — chosen notices always visible', 'essa-wp-suite' ) ),
                 'option_key'  => 'ewps_notices_settings', 'toggle_key' => 'notices_enabled',
                 'group' => 'ewps_notices_settings_group', 'page' => 'ewps-notices-settings',
-                'sidebar' => function() use ( $self ) { $self->sidebar_tip( __( 'Whitelist: klasy CSS powiadomień, które mają być zawsze widoczne (np. woocommerce-message).', 'essa-wp-suite' ) ); },
+                'sidebar' => function() use ( $self ) { $self->sidebar_tip( __( 'Whitelist: CSS classes of notices that should always stay visible (for example woocommerce-message).', 'essa-wp-suite' ) ); },
             ),
         );
     }
@@ -346,7 +346,7 @@ class ESSA_WP_Suite {
             $title = $mod['icon'] . ' ' . $mod['label'] . ( ! empty( $mod['locked'] ) ? ' <span class="ewps-menu-pro">PRO</span>' : '' );
             add_submenu_page( 'ewps-settings', $mod['label'], $title, 'manage_options', 'admin.php?page=ewps-settings&tab=' . $mod['tab'] );
         }
-        add_submenu_page( 'ewps-settings', __( 'Licencja Pro', 'essa-wp-suite' ), '🔑 ' . __( 'Licencja Pro', 'essa-wp-suite' ), 'manage_options', 'admin.php?page=ewps-settings&tab=license' );
+        add_submenu_page( 'ewps-settings', __( 'Pro license', 'essa-wp-suite' ), '🔑 ' . __( 'Pro license', 'essa-wp-suite' ), 'manage_options', 'admin.php?page=ewps-settings&tab=license' );
     }
 
     public function highlight_submenu( $submenu_file, $parent_file ) {
@@ -357,12 +357,12 @@ class ESSA_WP_Suite {
     }
 
     public function action_links( $links ) {
-        array_unshift( $links, '<a href="' . esc_url( ESSA_Suite_Utils::tab_url() ) . '">' . esc_html__( 'Ustawienia', 'essa-wp-suite' ) . '</a>' );
+        array_unshift( $links, '<a href="' . esc_url( ESSA_Suite_Utils::tab_url() ) . '">' . esc_html__( 'Settings', 'essa-wp-suite' ) . '</a>' );
         if ( current_user_can( 'update_plugins' ) ) {
-            $links[] = '<a href="' . esc_url( ESSA_Updater::get_instance()->force_check_link() ) . '">' . esc_html__( 'Sprawdź aktualizacje', 'essa-wp-suite' ) . '</a>';
+            $links[] = '<a href="' . esc_url( ESSA_Updater::get_instance()->force_check_link() ) . '">' . esc_html__( 'Check for updates', 'essa-wp-suite' ) . '</a>';
         }
         if ( ! ESSA_License::get_instance()->is_valid() ) {
-            $links[] = '<a href="' . esc_url( ESSA_License::shop_url() ) . '" target="_blank" rel="noopener" style="color:#d63638;font-weight:600">' . esc_html__( 'Kup Pro', 'essa-wp-suite' ) . '</a>';
+            $links[] = '<a href="' . esc_url( ESSA_License::shop_url() ) . '" target="_blank" rel="noopener" style="color:#d63638;font-weight:600">' . esc_html__( 'Buy Pro', 'essa-wp-suite' ) . '</a>';
         }
         return $links;
     }
@@ -371,24 +371,24 @@ class ESSA_WP_Suite {
 
     public function admin_init() {
         register_setting( 'ewps_enc_settings_group', 'ewps_enc_settings', array( $this, 'sanitize_enc' ) );
-        add_settings_section( 'ewps_enc_general', __( 'Ochrona emaili', 'essa-wp-suite' ), '__return_false', 'ewps-enc-settings' );
-        add_settings_section( 'ewps_enc_filters', __( 'Co filtrować?', 'essa-wp-suite' ), '__return_false', 'ewps-enc-settings' );
+        add_settings_section( 'ewps_enc_general', __( 'Email protection', 'essa-wp-suite' ), '__return_false', 'ewps-enc-settings' );
+        add_settings_section( 'ewps_enc_filters', __( 'What to filter', 'essa-wp-suite' ), '__return_false', 'ewps-enc-settings' );
 
         $enc_general = array(
-            'enc_enabled'         => array( __( 'Włącz Email Encoder', 'essa-wp-suite' ), 'enc_field_checkbox' ),
-            'enc_encode_method'   => array( __( 'Metoda kodowania', 'essa-wp-suite' ),     'enc_field_method' ),
-            'enc_filter_priority' => array( __( 'Priorytet filtrów', 'essa-wp-suite' ),    'enc_field_priority' ),
+            'enc_enabled'         => array( __( 'Enable Email Encoder', 'essa-wp-suite' ), 'enc_field_checkbox' ),
+            'enc_encode_method'   => array( __( 'Encoding method', 'essa-wp-suite' ),     'enc_field_method' ),
+            'enc_filter_priority' => array( __( 'Filter priority', 'essa-wp-suite' ),    'enc_field_priority' ),
         );
         foreach ( $enc_general as $id => $data ) {
             add_settings_field( 'ewps_' . $id, $data[0], array( $this, $data[1] ), 'ewps-enc-settings', 'ewps_enc_general', array( 'id' => $id ) );
         }
         $enc_filters = array(
-            'enc_filter_content'  => __( 'Treść postów/stron', 'essa-wp-suite' ),
-            'enc_filter_excerpt'  => __( 'Zajawki', 'essa-wp-suite' ),
-            'enc_filter_comments' => __( 'Komentarze', 'essa-wp-suite' ),
-            'enc_filter_widgets'  => __( 'Widżety tekstowe', 'essa-wp-suite' ),
-            'enc_filter_menus'    => __( 'Menu nawigacyjne', 'essa-wp-suite' ),
-            'enc_filter_author'   => __( 'Pole autora', 'essa-wp-suite' ),
+            'enc_filter_content'  => __( 'Post and page content', 'essa-wp-suite' ),
+            'enc_filter_excerpt'  => __( 'Excerpts', 'essa-wp-suite' ),
+            'enc_filter_comments' => __( 'Comments', 'essa-wp-suite' ),
+            'enc_filter_widgets'  => __( 'Text widgets', 'essa-wp-suite' ),
+            'enc_filter_menus'    => __( 'Navigation menus', 'essa-wp-suite' ),
+            'enc_filter_author'   => __( 'Author field', 'essa-wp-suite' ),
         );
         foreach ( $enc_filters as $id => $label ) {
             add_settings_field( 'ewps_' . $id, $label, array( $this, 'enc_field_checkbox' ), 'ewps-enc-settings', 'ewps_enc_filters', array( 'id' => $id ) );
@@ -433,7 +433,7 @@ class ESSA_WP_Suite {
     public function enc_field_method( $a ) {
         $val  = $this->opt( 'enc_encode_method' );
         $opts = array(
-            'mixed'   => __( 'Mieszany decimal+hex (zalecany)', 'essa-wp-suite' ),
+            'mixed'   => __( 'Mixed decimal and hex (recommended)', 'essa-wp-suite' ),
             'decimal' => __( 'Decimal (&#65;)', 'essa-wp-suite' ),
             'hex'     => __( 'Hex (&#x41;)', 'essa-wp-suite' ),
         );
@@ -445,7 +445,7 @@ class ESSA_WP_Suite {
     public function enc_field_priority( $a ) {
         printf( '<input type="number" name="ewps_enc_settings[enc_filter_priority]" value="%s" min="1" max="9999" style="width:80px"><p class="description">%s</p>',
             esc_attr( $this->opt( 'enc_filter_priority' ) ),
-            esc_html__( 'Domyślnie 100. Zwiększ, jeśli inne wtyczki nadpisują treść po kodowaniu.', 'essa-wp-suite' ) );
+            esc_html__( 'Default is 100. Raise it if other plugins overwrite the content after encoding.', 'essa-wp-suite' ) );
     }
 
     // ─── AJAX ────────────────────────────────────────────────────────────────
@@ -459,13 +459,13 @@ class ESSA_WP_Suite {
 
     public function ajax_toggle_module() {
         check_ajax_referer( 'ewps_ajax', 'nonce' );
-        if ( ! current_user_can( 'manage_options' ) ) wp_send_json_error( __( 'Brak uprawnień.', 'essa-wp-suite' ) );
+        if ( ! current_user_can( 'manage_options' ) ) wp_send_json_error( __( 'You do not have permission.', 'essa-wp-suite' ) );
 
         $module_id = sanitize_key( $_POST['module'] ?? '' );
         $modules   = $this->get_modules();
-        if ( ! isset( $modules[ $module_id ] ) ) wp_send_json_error( __( 'Nieznany moduł.', 'essa-wp-suite' ) );
+        if ( ! isset( $modules[ $module_id ] ) ) wp_send_json_error( __( 'Unknown module.', 'essa-wp-suite' ) );
         $meta = $modules[ $module_id ];
-        if ( ! empty( $meta['locked'] ) ) wp_send_json_error( __( 'Ten moduł jest w wersji Pro.', 'essa-wp-suite' ) );
+        if ( ! empty( $meta['locked'] ) ) wp_send_json_error( __( 'This module is part of the Pro version.', 'essa-wp-suite' ) );
 
         $opts = get_option( $meta['option_key'], array() );
         $opts = is_array( $opts ) ? $opts : array();
@@ -487,21 +487,21 @@ class ESSA_WP_Suite {
             'ajax'     => admin_url( 'admin-ajax.php' ),
             'base_url' => ESSA_Suite_Utils::tab_url(),
             'i18n'     => array(
-                'saving'      => __( 'Zapisywanie…', 'essa-wp-suite' ),
-                'active'      => __( 'Aktywny', 'essa-wp-suite' ),
-                'inactive'    => __( 'Nieaktywny', 'essa-wp-suite' ),
-                'error'       => __( 'Błąd. Spróbuj ponownie.', 'essa-wp-suite' ),
-                'activeOf'    => __( 'aktywnych', 'essa-wp-suite' ),
-                'maintOn'     => __( 'Maintenance Mode jest aktywny! Odwiedzający widzą stronę techniczną.', 'essa-wp-suite' ),
-                'encode'      => __( 'Koduj', 'essa-wp-suite' ),
-                'sending'     => __( 'Wysyłanie…', 'essa-wp-suite' ),
-                'sendTest'    => __( 'Wyślij test', 'essa-wp-suite' ),
-                'sentTo'      => __( 'Email wysłany do:', 'essa-wp-suite' ),
-                'errorPrefix' => __( 'Błąd:', 'essa-wp-suite' ),
-                'unknown'     => __( 'nieznany', 'essa-wp-suite' ),
-                'ajaxError'   => __( 'Błąd połączenia AJAX.', 'essa-wp-suite' ),
-                'confirmClean'=> __( 'Na pewno wyczyścić: %s? Operacja jest nieodwracalna.', 'essa-wp-suite' ),
-                'clean'       => __( 'Wyczyść', 'essa-wp-suite' ),
+                'saving'      => __( 'Saving…', 'essa-wp-suite' ),
+                'active'      => __( 'Active', 'essa-wp-suite' ),
+                'inactive'    => __( 'Inactive', 'essa-wp-suite' ),
+                'error'       => __( 'Error. Please try again.', 'essa-wp-suite' ),
+                'activeOf'    => __( 'active', 'essa-wp-suite' ),
+                'maintOn'     => __( 'Maintenance Mode is on! Visitors see the maintenance page.', 'essa-wp-suite' ),
+                'encode'      => __( 'Encode', 'essa-wp-suite' ),
+                'sending'     => __( 'Sending…', 'essa-wp-suite' ),
+                'sendTest'    => __( 'Send a test', 'essa-wp-suite' ),
+                'sentTo'      => __( 'Email sent to:', 'essa-wp-suite' ),
+                'errorPrefix' => __( 'Error:', 'essa-wp-suite' ),
+                'unknown'     => __( 'unknown', 'essa-wp-suite' ),
+                'ajaxError'   => __( 'AJAX connection error.', 'essa-wp-suite' ),
+                'confirmClean'=> __( 'Really clean up %s? This cannot be undone.', 'essa-wp-suite' ),
+                'clean'       => __( 'Clean up', 'essa-wp-suite' ),
             ),
         ) );
     }
@@ -531,7 +531,7 @@ class ESSA_WP_Suite {
                     <a href="<?php echo esc_url( $dashboard_url ); ?>" class="ewps-back-btn">← <?php esc_html_e( 'Dashboard', 'essa-wp-suite' ); ?></a>
                     <span class="ewps-breadcrumb"><?php echo esc_html( $module_label ); ?></span>
                 <?php else : ?>
-                    <span class="ewps-modules-badge"><?php echo (int) $active_count; ?>/<?php echo (int) count( $unlocked ); ?> <?php esc_html_e( 'aktywnych', 'essa-wp-suite' ); ?></span>
+                    <span class="ewps-modules-badge"><?php echo (int) $active_count; ?>/<?php echo (int) count( $unlocked ); ?> <?php esc_html_e( 'active', 'essa-wp-suite' ); ?></span>
                 <?php endif; ?>
                 <a href="<?php echo esc_url( ESSA_Suite_Utils::tab_url( 'license' ) ); ?>" class="ewps-license-badge <?php echo $license->is_valid() ? 'ewps-status--on' : 'ewps-status--off'; ?>"><?php echo $license->is_valid() ? esc_html__( 'PRO', 'essa-wp-suite' ) : esc_html__( 'FREE', 'essa-wp-suite' ); ?></a>
                 <span class="ewps-version">v<?php echo esc_html( EWPS_VERSION ); ?><?php if ( defined( 'EWPS_PRO_VERSION' ) ) echo ' / Pro ' . esc_html( EWPS_PRO_VERSION ); ?></span>
@@ -546,7 +546,7 @@ class ESSA_WP_Suite {
         <div class="ewps-layout">
             <div class="ewps-main">
                 <form method="post" action="options.php">
-                    <?php settings_fields( $group ); do_settings_sections( $page ); submit_button( __( 'Zapisz', 'essa-wp-suite' ) ); ?>
+                    <?php settings_fields( $group ); do_settings_sections( $page ); submit_button( __( 'Save', 'essa-wp-suite' ) ); ?>
                 </form>
             </div>
             <div class="ewps-sidebar"><?php if ( is_callable( $sidebar_cb ) ) call_user_func( $sidebar_cb ); ESSA_Promo::get_instance()->render_sidebar_card(); ?></div>
@@ -565,12 +565,12 @@ class ESSA_WP_Suite {
                         <?php foreach ( (array) $mod['features'] as $f ) : ?><li>✓ <?php echo esc_html( $f ); ?></li><?php endforeach; ?>
                     </ul>
                     <p>
-                        <a href="<?php echo esc_url( ESSA_License::shop_url() ); ?>" class="button button-primary" target="_blank" rel="noopener"><?php esc_html_e( 'Kup ESSA WP Suite Pro →', 'essa-wp-suite' ); ?></a>
-                        <a href="<?php echo esc_url( ESSA_Suite_Utils::tab_url( 'license' ) ); ?>" class="button"><?php esc_html_e( 'Mam już klucz', 'essa-wp-suite' ); ?></a>
+                        <a href="<?php echo esc_url( ESSA_License::shop_url() ); ?>" class="button button-primary" target="_blank" rel="noopener"><?php esc_html_e( 'Buy ESSA WP Suite Pro →', 'essa-wp-suite' ); ?></a>
+                        <a href="<?php echo esc_url( ESSA_Suite_Utils::tab_url( 'license' ) ); ?>" class="button"><?php esc_html_e( 'I already have a key', 'essa-wp-suite' ); ?></a>
                     </p>
                 </div>
             </div>
-            <div class="ewps-sidebar"><?php $this->sidebar_tip( __( 'Wszystkie moduły Pro odblokowuje jeden klucz licencji. Po aktywacji wtyczka Pro instaluje się jednym kliknięciem z zakładki Licencja.', 'essa-wp-suite' ) ); ?></div>
+            <div class="ewps-sidebar"><?php $this->sidebar_tip( __( 'One license key unlocks every Pro module. After activation the Pro plugin installs with a single click from the License tab.', 'essa-wp-suite' ) ); ?></div>
         </div>
         <?php
     }
@@ -585,7 +585,7 @@ class ESSA_WP_Suite {
         foreach ( $modules as $mod ) {
             if ( $mod['tab'] === $active ) $current = $mod;
         }
-        $label = $current ? $current['icon'] . ' ' . $current['label'] : ( 'license' === $active ? '🔑 ' . __( 'Licencja Pro', 'essa-wp-suite' ) : '' );
+        $label = $current ? $current['icon'] . ' ' . $current['label'] : ( 'license' === $active ? '🔑 ' . __( 'Pro license', 'essa-wp-suite' ) : '' );
         $maint_active = $this->is_module_active( $modules['maintenance'] );
         $license = ESSA_License::get_instance();
         ?>
@@ -593,16 +593,16 @@ class ESSA_WP_Suite {
             <?php $this->render_page_header( $label ); ?>
 
             <?php if ( isset( $_GET['unlocked'] ) ) : ?>
-            <div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'IP zostało odblokowane.', 'essa-wp-suite' ); ?></p></div>
+            <div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'The IP address has been unblocked.', 'essa-wp-suite' ); ?></p></div>
             <?php endif; ?>
             <?php if ( isset( $_GET['dc_deleted'] ) ) : ?>
-            <div class="notice notice-success is-dismissible"><p><?php printf( esc_html__( 'Usunięto komentarzy: %d.', 'essa-wp-suite' ), (int) $_GET['dc_deleted'] ); ?></p></div>
+            <div class="notice notice-success is-dismissible"><p><?php printf( esc_html__( 'Comments deleted: %d.', 'essa-wp-suite' ), (int) $_GET['dc_deleted'] ); ?></p></div>
             <?php endif; ?>
             <?php if ( $maint_active && 'dashboard' === $active ) : ?>
-            <div class="notice notice-warning ewps-maint-warning"><p>🚧 <strong><?php esc_html_e( 'Maintenance Mode jest aktywny!', 'essa-wp-suite' ); ?></strong> <?php esc_html_e( 'Odwiedzający widzą stronę techniczną.', 'essa-wp-suite' ); ?></p></div>
+            <div class="notice notice-warning ewps-maint-warning"><p>🚧 <strong><?php esc_html_e( 'Maintenance Mode is on!', 'essa-wp-suite' ); ?></strong> <?php esc_html_e( 'Visitors see the maintenance page.', 'essa-wp-suite' ); ?></p></div>
             <?php endif; ?>
             <?php if ( 'dashboard' === $active && $license->key() && ! $license->is_valid() ) : ?>
-            <div class="notice notice-error"><p><strong><?php esc_html_e( 'Licencja Pro nieaktywna:', 'essa-wp-suite' ); ?></strong> <?php echo esc_html( $license->status_label() ); ?>. <a href="<?php echo esc_url( ESSA_Suite_Utils::tab_url( 'license' ) ); ?>"><?php esc_html_e( 'Sprawdź licencję →', 'essa-wp-suite' ); ?></a></p></div>
+            <div class="notice notice-error"><p><strong><?php esc_html_e( 'Pro license inactive:', 'essa-wp-suite' ); ?></strong> <?php echo esc_html( $license->status_label() ); ?>. <a href="<?php echo esc_url( ESSA_Suite_Utils::tab_url( 'license' ) ); ?>"><?php esc_html_e( 'Check the license →', 'essa-wp-suite' ); ?></a></p></div>
             <?php endif; ?>
             <?php if ( 'dashboard' !== $active && 'license' !== $active ) settings_errors(); ?>
 
@@ -623,13 +623,13 @@ class ESSA_WP_Suite {
                                 <div class="ewps-module-card__meta">
                                     <strong class="ewps-module-card__name"><?php echo esc_html( $mod['label'] ); ?><?php if ( ! empty( $mod['pro'] ) ) echo ' <span class="ewps-menu-pro">PRO</span>'; ?></strong>
                                     <span class="ewps-module-card__status <?php echo $locked ? 'ewps-status--locked' : ( $is_active ? 'ewps-status--on' : 'ewps-status--off' ); ?>">
-                                        <?php echo $locked ? esc_html__( 'Wymaga Pro', 'essa-wp-suite' ) : ( $is_active ? esc_html__( 'Aktywny', 'essa-wp-suite' ) : esc_html__( 'Nieaktywny', 'essa-wp-suite' ) ); ?>
+                                        <?php echo $locked ? esc_html__( 'Requires Pro', 'essa-wp-suite' ) : ( $is_active ? esc_html__( 'Active', 'essa-wp-suite' ) : esc_html__( 'Inactive', 'essa-wp-suite' ) ); ?>
                                     </span>
                                 </div>
                                 <?php if ( $locked ) : ?>
-                                    <span class="ewps-lock" title="<?php esc_attr_e( 'Moduł Pro', 'essa-wp-suite' ); ?>">🔒</span>
+                                    <span class="ewps-lock" title="<?php esc_attr_e( 'Pro module', 'essa-wp-suite' ); ?>">🔒</span>
                                 <?php else : ?>
-                                <button type="button" class="ewps-toggle <?php echo $is_active ? 'ewps-toggle--on' : ''; ?>" data-module="<?php echo esc_attr( $mod['id'] ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Włącz/wyłącz: %s', 'essa-wp-suite' ), $mod['label'] ) ); ?>">
+                                <button type="button" class="ewps-toggle <?php echo $is_active ? 'ewps-toggle--on' : ''; ?>" data-module="<?php echo esc_attr( $mod['id'] ); ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Enable or disable: %s', 'essa-wp-suite' ), $mod['label'] ) ); ?>">
                                     <span class="ewps-toggle__knob"></span>
                                 </button>
                                 <?php endif; ?>
@@ -638,7 +638,7 @@ class ESSA_WP_Suite {
                             <ul class="ewps-module-card__features">
                                 <?php foreach ( (array) $mod['features'] as $feat ) : ?><li><?php echo esc_html( $feat ); ?></li><?php endforeach; ?>
                             </ul>
-                            <a href="<?php echo esc_url( $tab_url ); ?>" class="ewps-module-card__link"><?php echo $locked ? esc_html__( 'Zobacz →', 'essa-wp-suite' ) : esc_html__( 'Konfiguruj →', 'essa-wp-suite' ); ?></a>
+                            <a href="<?php echo esc_url( $tab_url ); ?>" class="ewps-module-card__link"><?php echo $locked ? esc_html__( 'See it →', 'essa-wp-suite' ) : esc_html__( 'Configure →', 'essa-wp-suite' ); ?></a>
                         </div>
                     <?php endforeach; ?>
                     </div>
@@ -649,13 +649,13 @@ class ESSA_WP_Suite {
                             $unlocked = array_filter( $modules, function( $m ) { return empty( $m['locked'] ); } );
                             $active_n = count( array_filter( $unlocked, array( $this, 'is_module_active' ) ) );
                             ?>
-                            <div class="ewps-stat"><span class="ewps-stat__num" id="ewps-stat-active"><?php echo (int) $active_n; ?></span><span class="ewps-stat__label"><?php esc_html_e( 'Aktywne', 'essa-wp-suite' ); ?></span></div>
-                            <div class="ewps-stat"><span class="ewps-stat__num" id="ewps-stat-inactive"><?php echo (int) ( count( $unlocked ) - $active_n ); ?></span><span class="ewps-stat__label"><?php esc_html_e( 'Nieaktywne', 'essa-wp-suite' ); ?></span></div>
-                            <div class="ewps-stat"><span class="ewps-stat__num"><?php echo (int) ( count( $modules ) - count( $unlocked ) ); ?></span><span class="ewps-stat__label"><?php esc_html_e( 'Do odblokowania', 'essa-wp-suite' ); ?></span></div>
-                            <div class="ewps-stat"><span class="ewps-stat__num"><?php echo esc_html( EWPS_VERSION ); ?></span><span class="ewps-stat__label"><?php esc_html_e( 'Wersja', 'essa-wp-suite' ); ?></span></div>
+                            <div class="ewps-stat"><span class="ewps-stat__num" id="ewps-stat-active"><?php echo (int) $active_n; ?></span><span class="ewps-stat__label"><?php esc_html_e( 'Active', 'essa-wp-suite' ); ?></span></div>
+                            <div class="ewps-stat"><span class="ewps-stat__num" id="ewps-stat-inactive"><?php echo (int) ( count( $unlocked ) - $active_n ); ?></span><span class="ewps-stat__label"><?php esc_html_e( 'Inactive', 'essa-wp-suite' ); ?></span></div>
+                            <div class="ewps-stat"><span class="ewps-stat__num"><?php echo (int) ( count( $modules ) - count( $unlocked ) ); ?></span><span class="ewps-stat__label"><?php esc_html_e( 'To unlock', 'essa-wp-suite' ); ?></span></div>
+                            <div class="ewps-stat"><span class="ewps-stat__num"><?php echo esc_html( EWPS_VERSION ); ?></span><span class="ewps-stat__label"><?php esc_html_e( 'Version', 'essa-wp-suite' ); ?></span></div>
                         </div>
                         <?php if ( ! $license->is_valid() ) : ?>
-                        <p class="ewps-upsell"><a href="<?php echo esc_url( ESSA_License::shop_url() ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Odblokuj 7 modułów Pro jednym kluczem →', 'essa-wp-suite' ); ?></a></p>
+                        <p class="ewps-upsell"><a href="<?php echo esc_url( ESSA_License::shop_url() ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Unlock 7 Pro modules with one key →', 'essa-wp-suite' ); ?></a></p>
                         <?php endif; ?>
                     </div>
                     <?php ESSA_Promo::get_instance()->render_dashboard_section(); ?>
@@ -674,7 +674,7 @@ class ESSA_WP_Suite {
                 <?php $this->render_module_form( $current['group'], $current['page'], isset( $current['sidebar'] ) ? $current['sidebar'] : null ); ?>
 
             <?php else : ?>
-                <p><?php esc_html_e( 'Nieznana zakładka.', 'essa-wp-suite' ); ?> <a href="<?php echo esc_url( $base ); ?>"><?php esc_html_e( 'Wróć do dashboardu', 'essa-wp-suite' ); ?></a></p>
+                <p><?php esc_html_e( 'Unknown tab.', 'essa-wp-suite' ); ?> <a href="<?php echo esc_url( $base ); ?>"><?php esc_html_e( 'Back to the dashboard', 'essa-wp-suite' ); ?></a></p>
             <?php endif; ?>
 
             </div>

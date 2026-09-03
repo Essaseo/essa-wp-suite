@@ -82,7 +82,7 @@ check( 'license: admin_init',                  isset( $hooks['admin_init'] ) );
 
 $suite = ESSA_WP_Suite::get_instance();
 $reg   = $suite->get_modules();
-check( 'rejestr: 13 modułów (6 free + 7 katalog Pro)', count( $reg ) === 13 );
+check( 'rejestr: 13 modulow (6 free + 7 katalog Pro)', count( $reg ) === 13 );
 $locked = array_filter( $reg, function( $m ) { return ! empty( $m['locked'] ); } );
 check( 'rejestr: 7 zablokowanych bez Pro',     count( $locked ) === 7 );
 check( 'rejestr: encoder ma group/page',        ! empty( $reg['encoder']['group'] ) );

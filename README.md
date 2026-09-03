@@ -15,7 +15,7 @@ essa-wp-suite/          ← to trafia do wp-content/plugins/
     class-license.php   klucz Pro: aktywacja, stan, instalacja Pro jednym kliknięciem
     class-*.php         po jednym module
   admin/                admin.css, admin.js
-  languages/            .pot do tłumaczeń
+  languages/            .pot + polskie tłumaczenie (.po/.mo)
   readme.txt            opis w formacie wordpress.org
   uninstall.php
 tests/
@@ -37,6 +37,18 @@ php tests/test-encoder.php
 php tests/smoke.php
 bash narzedzia/build.sh      # lint, testy, dist/essa-wp-suite-<wersja>.zip
 ```
+
+## Języki
+
+Teksty źródłowe w kodzie są **po angielsku**; polski wchodzi jako tłumaczenie z `languages/essa-wp-suite-pl_PL.mo`. WordPress wybiera język po ustawieniu witryny.
+
+```
+python narzedzia/i18n.py check essa-wp-suite                  # czy coś zostało po polsku
+python narzedzia/i18n.py apply mapa.json essa-wp-suite        # podmiana tekstów w kodzie
+python narzedzia/i18n.py po mapa.json essa-wp-suite pl_PL essa-wp-suite   # .po + .mo
+```
+
+Mapa to `{"tekst polski": "English text"}`. Nowy tekst dopisujesz po angielsku w kodzie, a polskie tłumaczenie dokładasz do mapy i przebudowujesz `.mo`. Wtyczka Pro ma osobną domenę `essa-wp-suite-pro` i własny plik `.mo` — jedna domena dla dwóch wtyczek nie działa, bo WordPress ładuje ją tylko z jednego katalogu.
 
 ## Wydanie nowej wersji
 

@@ -176,7 +176,7 @@ class ESSA_Updater {
             'requires_php'   => EWPS_MIN_PHP,
             'last_updated'   => $release['published'],
             'sections'       => array(
-                'description' => '<p>' . esc_html__( 'Zestaw narzędzi administracyjnych WordPress od ESSA SEO: Email Encoder, Disable Comments, Login Security, Disable XML-RPC, Maintenance Mode, WP Hardening, Admin Notices, SMTP, DB Cleaner, Admin Cleaner, Auto Updates, White Label, Activity Log.', 'essa-wp-suite' ) . '</p>',
+                'description' => '<p>' . esc_html__( 'A WordPress admin toolkit by ESSA SEO: Email Encoder, Disable Comments, Login Security, Disable XML-RPC, Maintenance Mode, WP Hardening, Admin Notices, SMTP, DB Cleaner, Admin Cleaner, Auto Updates, White Label, Activity Log.', 'essa-wp-suite' ) . '</p>',
                 'changelog'   => $changelog,
             ),
         );
@@ -246,9 +246,9 @@ class ESSA_Updater {
         if ( empty( $_GET['ewps_update'] ) ) return;
         $status = sanitize_key( $_GET['ewps_update'] );
         $texts  = array(
-            'available' => array( 'notice-warning', __( 'Jest nowa wersja ESSA WP Suite — aktualizuj z listy wtyczek.', 'essa-wp-suite' ) ),
-            'latest'    => array( 'notice-success', sprintf( __( 'ESSA WP Suite %s to najnowsza wersja.', 'essa-wp-suite' ), EWPS_VERSION ) ),
-            'error'     => array( 'notice-error',   __( 'Nie udało się połączyć z GitHubem albo repozytorium nie ma jeszcze wydania.', 'essa-wp-suite' ) ),
+            'available' => array( 'notice-warning', __( 'A new version of ESSA WP Suite is available — update it from the Plugins screen.', 'essa-wp-suite' ) ),
+            'latest'    => array( 'notice-success', sprintf( __( 'ESSA WP Suite %s is the latest version.', 'essa-wp-suite' ), EWPS_VERSION ) ),
+            'error'     => array( 'notice-error',   __( 'Could not reach GitHub, or the repository has no release yet.', 'essa-wp-suite' ) ),
         );
         if ( ! isset( $texts[ $status ] ) ) return;
         printf( '<div class="notice %s is-dismissible"><p>%s</p></div>', esc_attr( $texts[ $status ][0] ), esc_html( $texts[ $status ][1] ) );

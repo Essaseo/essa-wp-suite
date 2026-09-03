@@ -7,7 +7,7 @@ i zbudowanie polskiego tłumaczenia (.po + .mo) bez gettexta w systemie.
       Podmienia teksty w wywołaniach __(), _e(), esc_html__() itd.
       Mapa: {"tekst polski": "English text"} — klucze dokładnie jak w kodzie.
 
-  python narzedzia/i18n.py po     <mapa.json> <katalog-wtyczki> [pl_PL]
+  python narzedzia/i18n.py po     <mapa.json> <katalog-wtyczki> [locale] [textdomain]
       Buduje languages/<textdomain>-<locale>.po i .mo (msgid = angielski, msgstr = polski).
 
   python narzedzia/i18n.py check  <katalog-wtyczki>
@@ -52,7 +52,10 @@ def cmd_apply(mapping_path, root):
         raw = m.group(1)
         if raw in mapping:
             en = mapping[raw]
-            return m.group(0).replace(quote + raw + quote, quote + php_escape(php_unescape(en)) + quote, 1)
+            # W stringach w cudzyslowach PHP sam interpretuje sekwencje (nowa linia, dolar),
+            # wiec tam nie wolno dokladac escapowania.
+            new = php_escape(php_unescape(en)) if quote == "'" else en
+            return m.group(0).replace(quote + raw + quote, quote + new + quote, 1)
         if any(c in raw for c in PLCHARS):
             missing.add(raw)
         return m.group(0)
@@ -121,9 +124,9 @@ def compile_mo(pairs, dest):
     return len(items)
 
 
-def cmd_po(mapping_path, root, locale='pl_PL'):
+def cmd_po(mapping_path, root, locale='pl_PL', domain=None):
     mapping = json.load(io.open(mapping_path, encoding='utf-8'))  # {PL_w_kodzie: EN}
-    domain = 'essa-wp-suite'
+    domain = domain or os.path.basename(os.path.normpath(root))
     langs = os.path.join(root, 'languages')
     os.makedirs(langs, exist_ok=True)
 
@@ -206,7 +209,8 @@ if __name__ == '__main__':
     if cmd == 'apply':
         sys.exit(cmd_apply(sys.argv[2], sys.argv[3]))
     if cmd == 'po':
-        sys.exit(cmd_po(sys.argv[2], sys.argv[3], sys.argv[4] if len(sys.argv) > 4 else 'pl_PL'))
+        sys.exit(cmd_po(sys.argv[2], sys.argv[3], sys.argv[4] if len(sys.argv) > 4 else 'pl_PL',
+                        sys.argv[5] if len(sys.argv) > 5 else None))
     if cmd == 'check':
         sys.exit(cmd_check(sys.argv[2]))
     print(__doc__)

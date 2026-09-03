@@ -67,7 +67,7 @@ class ESSA_Maintenance {
         if ( ! current_user_can( 'manage_options' ) ) return;
         $wp_admin_bar->add_node( array(
             'id'    => 'ewps-maintenance-on',
-            'title' => '🚧 ' . __( 'Tryb serwisowy WŁĄCZONY', 'essa-wp-suite' ),
+            'title' => '🚧 ' . __( 'Maintenance mode ON', 'essa-wp-suite' ),
             'href'  => ESSA_Suite_Utils::tab_url( 'maintenance' ),
             'meta'  => array( 'style' => 'background:#f97316;color:#000;font-weight:700' ),
         ) );
@@ -169,20 +169,20 @@ class ESSA_Maintenance {
         add_settings_section( 'ewps_maint_main', '', '__return_false', 'ewps-maint-settings' );
 
         $fields = array(
-            'maint_enabled'      => array( __( 'Włącz tryb serwisowy', 'essa-wp-suite' ),           'field_checkbox' ),
-            'maint_title'        => array( __( 'Tytuł strony', 'essa-wp-suite' ),                    'field_text' ),
-            'maint_message'      => array( __( 'Treść komunikatu (HTML dozwolony)', 'essa-wp-suite' ),'field_editor' ),
-            'maint_logo_url'     => array( __( 'URL logo (zamiast emoji 🔧)', 'essa-wp-suite' ),     'field_text_logo' ),
-            'maint_bg_image_url' => array( __( 'URL zdjęcia tła', 'essa-wp-suite' ),                 'field_text_bg' ),
-            'maint_bg_color'     => array( __( 'Kolor tła', 'essa-wp-suite' ),                       'field_color' ),
-            'maint_text_color'   => array( __( 'Kolor tekstu', 'essa-wp-suite' ),                    'field_color' ),
-            'maint_accent_color' => array( __( 'Kolor akcentu (badge, pasek)', 'essa-wp-suite' ),    'field_color' ),
-            'maint_custom_html'  => array( __( 'Dodatkowy HTML (np. social linki)', 'essa-wp-suite' ),'field_html' ),
-            'maint_custom_css'   => array( __( 'Własne CSS', 'essa-wp-suite' ),                      'field_css' ),
-            'maint_retry'        => array( __( 'Retry-After (sekundy)', 'essa-wp-suite' ),            'field_number' ),
-            'maint_whitelist'    => array( __( 'Whitelist IP', 'essa-wp-suite' ),                     'field_whitelist' ),
-            'maint_trust_proxy'  => array( __( 'Strona jest za proxy / Cloudflare', 'essa-wp-suite' ), 'field_proxy' ),
-            'maint_bypass_role'  => array( __( 'Rola pomijająca serwis', 'essa-wp-suite' ),           'field_role' ),
+            'maint_enabled'      => array( __( 'Enable maintenance mode', 'essa-wp-suite' ),           'field_checkbox' ),
+            'maint_title'        => array( __( 'Page title', 'essa-wp-suite' ),                    'field_text' ),
+            'maint_message'      => array( __( 'Message body (HTML allowed)', 'essa-wp-suite' ),'field_editor' ),
+            'maint_logo_url'     => array( __( 'Logo URL (instead of the 🔧 emoji)', 'essa-wp-suite' ),     'field_text_logo' ),
+            'maint_bg_image_url' => array( __( 'Background image URL', 'essa-wp-suite' ),                 'field_text_bg' ),
+            'maint_bg_color'     => array( __( 'Background colour', 'essa-wp-suite' ),                       'field_color' ),
+            'maint_text_color'   => array( __( 'Text colour', 'essa-wp-suite' ),                    'field_color' ),
+            'maint_accent_color' => array( __( 'Accent colour (badge, bar)', 'essa-wp-suite' ),    'field_color' ),
+            'maint_custom_html'  => array( __( 'Extra HTML (e.g. social links)', 'essa-wp-suite' ),'field_html' ),
+            'maint_custom_css'   => array( __( 'Custom CSS', 'essa-wp-suite' ),                      'field_css' ),
+            'maint_retry'        => array( __( 'Retry-After (seconds)', 'essa-wp-suite' ),            'field_number' ),
+            'maint_whitelist'    => array( __( 'IP whitelist', 'essa-wp-suite' ),                     'field_whitelist' ),
+            'maint_trust_proxy'  => array( __( 'This site sits behind a proxy or Cloudflare', 'essa-wp-suite' ), 'field_proxy' ),
+            'maint_bypass_role'  => array( __( 'Role that bypasses maintenance', 'essa-wp-suite' ),           'field_role' ),
         );
 
         foreach ( $fields as $id => $data ) {
@@ -217,7 +217,7 @@ class ESSA_Maintenance {
     }
     public function field_proxy( $a ) {
         $this->field_checkbox( $a );
-        echo '<p class="description">' . esc_html__( 'Włącz tylko za Cloudflare / reverse proxy — wtedy whitelist IP porównuje adres z nagłówków proxy.', 'essa-wp-suite' ) . '</p>';
+        echo '<p class="description">' . esc_html__( 'Turn this on only behind Cloudflare or a reverse proxy — the IP whitelist then reads the address from proxy headers.', 'essa-wp-suite' ) . '</p>';
     }
     public function field_text( $a ) {
         $id = $a['id'];
@@ -226,12 +226,12 @@ class ESSA_Maintenance {
     public function field_text_logo( $a ) {
         printf( '<input type="url" name="ewps_maint_settings[maint_logo_url]" value="%s" class="large-text" placeholder="https://"><p class="description">%s</p>',
             esc_attr( $this->opt( 'maint_logo_url' ) ),
-            esc_html__( 'Zostaw puste aby wyświetlić emoji 🔧. Zalecany rozmiar: max 200×80px.', 'essa-wp-suite' ) );
+            esc_html__( 'Leave empty to show the 🔧 emoji. Recommended size: up to 200×80 px.', 'essa-wp-suite' ) );
     }
     public function field_text_bg( $a ) {
         printf( '<input type="url" name="ewps_maint_settings[maint_bg_image_url]" value="%s" class="large-text" placeholder="https://"><p class="description">%s</p>',
             esc_attr( $this->opt( 'maint_bg_image_url' ) ),
-            esc_html__( 'Pełnoekranowe zdjęcie tła. Zostaw puste aby użyć koloru tła.', 'essa-wp-suite' ) );
+            esc_html__( 'Full-screen background image. Leave empty to use the background colour.', 'essa-wp-suite' ) );
     }
     public function field_color( $a ) {
         $id = $a['id'];
@@ -255,7 +255,7 @@ class ESSA_Maintenance {
         $id = $a['id'];
         printf( '<textarea name="ewps_maint_settings[%1$s]" rows="4" class="large-text" placeholder="&lt;a href=&quot;https://facebook.com&quot;&gt;Facebook&lt;/a&gt;">%2$s</textarea><p class="description">%3$s</p>',
             esc_attr( $id ), esc_textarea( $this->opt( $id ) ),
-            esc_html__( 'Dozwolone: a, p, span, strong, em, br, ul, li i atrybuty href/class/target.', 'essa-wp-suite' ) );
+            esc_html__( 'Allowed: a, p, span, strong, em, br, ul, li and the href/class/target attributes.', 'essa-wp-suite' ) );
     }
     public function field_css( $a ) {
         $id = $a['id'];
@@ -269,7 +269,7 @@ class ESSA_Maintenance {
         $id = $a['id'];
         printf( '<textarea name="ewps_maint_settings[%1$s]" rows="3" class="regular-text">%2$s</textarea><p class="description">%3$s</p>',
             esc_attr( $id ), esc_textarea( $this->opt( $id ) ),
-            esc_html__( 'Np. 127.0.0.1, 192.168.1.0/24 — te IP zawsze widzą normalną stronę. Oddzielaj przecinkami lub nowymi liniami.', 'essa-wp-suite' ) );
+            esc_html__( 'For example 127.0.0.1, 192.168.1.0/24 — these addresses always see the normal site. Separate them with commas or new lines.', 'essa-wp-suite' ) );
     }
     public function field_role( $a ) {
         $id      = $a['id'];
@@ -279,7 +279,7 @@ class ESSA_Maintenance {
         foreach ( $roles as $slug => $name ) {
             printf( '<option value="%s" %s>%s</option>', esc_attr( $slug ), selected( $current, $slug, false ), esc_html( translate_user_role( $name ) ) );
         }
-        echo '</select><p class="description">' . esc_html__( 'Ta rola i wyższe zawsze widzą normalną stronę.', 'essa-wp-suite' ) . '</p>';
+        echo '</select><p class="description">' . esc_html__( 'This role and above always see the normal site.', 'essa-wp-suite' ) . '</p>';
     }
 }
 endif;

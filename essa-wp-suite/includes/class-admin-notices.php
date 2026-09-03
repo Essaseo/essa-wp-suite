@@ -61,7 +61,7 @@ class ESSA_Admin_Notices {
             'title' => '<span class="ewps-notices-icon">🔔</span> <span class="ewps-notices-count" style="display:none">0</span>',
             'href'  => '#',
             'meta'  => array(
-                'title' => __( 'Ukryte powiadomienia wtyczek', 'essa-wp-suite' ),
+                'title' => __( 'Hidden plugin notices', 'essa-wp-suite' ),
                 'class' => 'ewps-notices-bar-item',
             ),
         ) );
@@ -138,9 +138,9 @@ class ESSA_Admin_Notices {
             'hideWarning' => (bool) $this->opt( 'notices_hide_warning' ),
             'keepErrors'  => (bool) $this->opt( 'notices_keep_errors' ),
             'whitelist'   => $this->get_whitelist_classes(),
-            'title'       => __( 'Powiadomienia wtyczek', 'essa-wp-suite' ),
-            'close'       => __( 'Zamknij', 'essa-wp-suite' ),
-            'empty'       => __( 'Brak ukrytych powiadomień.', 'essa-wp-suite' ),
+            'title'       => __( 'Plugin notices', 'essa-wp-suite' ),
+            'close'       => __( 'Close', 'essa-wp-suite' ),
+            'empty'       => __( 'No hidden notices.', 'essa-wp-suite' ),
         );
         ?>
         <script id="ewps-notices-js">
@@ -244,13 +244,13 @@ class ESSA_Admin_Notices {
         add_settings_section( 'ewps_notices_main', '', '__return_false', 'ewps-notices-settings' );
 
         $fields = array(
-            'notices_enabled'      => array( __( 'Włącz moduł', 'essa-wp-suite' ),                                     'field_checkbox' ),
-            'notices_hide_info'    => array( __( 'Chowaj powiadomienia informacyjne (niebieskie)', 'essa-wp-suite' ),  'field_checkbox' ),
-            'notices_hide_success' => array( __( 'Chowaj powiadomienia sukcesu (zielone)', 'essa-wp-suite' ),         'field_checkbox' ),
-            'notices_hide_warning' => array( __( 'Chowaj ostrzeżenia (żółte)', 'essa-wp-suite' ),                     'field_checkbox' ),
-            'notices_keep_errors'  => array( __( 'Zawsze pokazuj błędy (czerwone)', 'essa-wp-suite' ),                'field_checkbox' ),
-            'notices_block_popups' => array( __( 'Blokuj popupy i overlaye wtyczek (CSS)', 'essa-wp-suite' ),         'field_checkbox' ),
-            'notices_whitelist'    => array( __( 'Whitelist klas CSS (zawsze widoczne)', 'essa-wp-suite' ),            'field_textarea' ),
+            'notices_enabled'      => array( __( 'Enable module', 'essa-wp-suite' ),                                     'field_checkbox' ),
+            'notices_hide_info'    => array( __( 'Hide info notices (blue)', 'essa-wp-suite' ),  'field_checkbox' ),
+            'notices_hide_success' => array( __( 'Hide success notices (green)', 'essa-wp-suite' ),         'field_checkbox' ),
+            'notices_hide_warning' => array( __( 'Hide warnings (yellow)', 'essa-wp-suite' ),                     'field_checkbox' ),
+            'notices_keep_errors'  => array( __( 'Always show errors (red)', 'essa-wp-suite' ),                'field_checkbox' ),
+            'notices_block_popups' => array( __( 'Block plugin pop-ups and overlays (CSS)', 'essa-wp-suite' ),         'field_checkbox' ),
+            'notices_whitelist'    => array( __( 'CSS class whitelist (always visible)', 'essa-wp-suite' ),            'field_textarea' ),
         );
 
         foreach ( $fields as $id => $data ) {
@@ -280,7 +280,7 @@ class ESSA_Admin_Notices {
             '<textarea id="ewps_%s" name="ewps_notices_settings[%s]" rows="3" class="regular-text">%s</textarea>
              <p class="description">%s</p>',
             esc_attr( $id ), esc_attr( $id ), esc_textarea( $this->opt( $id ) ),
-            esc_html__( 'Np. "woocommerce-message, tribe-notice" — powiadomienia z tymi klasami zawsze będą widoczne.', 'essa-wp-suite' )
+            esc_html__( 'For example "woocommerce-message, tribe-notice" — notices with these classes always stay visible.', 'essa-wp-suite' )
         );
     }
 }

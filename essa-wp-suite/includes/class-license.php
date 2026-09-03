@@ -94,17 +94,17 @@ class ESSA_License {
     }
 
     public function status_label() {
-        if ( '' === $this->key() ) return __( 'Brak klucza', 'essa-wp-suite' );
+        if ( '' === $this->key() ) return __( 'No key', 'essa-wp-suite' );
         $map = array(
-            'active'        => __( 'Aktywna', 'essa-wp-suite' ),
-            'expired'       => __( 'Wygasła', 'essa-wp-suite' ),
-            'revoked'       => __( 'Unieważniona', 'essa-wp-suite' ),
-            'invalid'       => __( 'Nieprawidłowy klucz', 'essa-wp-suite' ),
-            'not_activated' => __( 'Nieaktywowana na tej domenie', 'essa-wp-suite' ),
-            'limit'         => __( 'Limit stron wyczerpany', 'essa-wp-suite' ),
+            'active'        => __( 'Active', 'essa-wp-suite' ),
+            'expired'       => __( 'Expired', 'essa-wp-suite' ),
+            'revoked'       => __( 'Revoked', 'essa-wp-suite' ),
+            'invalid'       => __( 'Invalid key', 'essa-wp-suite' ),
+            'not_activated' => __( 'Not activated on this domain', 'essa-wp-suite' ),
+            'limit'         => __( 'Site limit reached', 'essa-wp-suite' ),
         );
-        $s = isset( $map[ $this->data['status'] ] ) ? $map[ $this->data['status'] ] : __( 'Nieznany', 'essa-wp-suite' );
-        if ( 'active' === $this->data['status'] && ! $this->is_valid() ) $s = __( 'Aktywna, ale serwer licencji nie odpowiada od 14 dni', 'essa-wp-suite' );
+        $s = isset( $map[ $this->data['status'] ] ) ? $map[ $this->data['status'] ] : __( 'Unknown', 'essa-wp-suite' );
+        if ( 'active' === $this->data['status'] && ! $this->is_valid() ) $s = __( 'Active, but the license server has not responded for 14 days', 'essa-wp-suite' );
         return $s;
     }
 
@@ -132,7 +132,7 @@ class ESSA_License {
         }
         $json = json_decode( wp_remote_retrieve_body( $res ), true );
         if ( ! is_array( $json ) ) {
-            return array( 'ok' => false, 'error' => 'bad_response', 'message' => __( 'Serwer licencji zwrócił niezrozumiałą odpowiedź.', 'essa-wp-suite' ), '_http' => (int) wp_remote_retrieve_response_code( $res ) );
+            return array( 'ok' => false, 'error' => 'bad_response', 'message' => __( 'The license server returned an unreadable response.', 'essa-wp-suite' ), '_http' => (int) wp_remote_retrieve_response_code( $res ) );
         }
         $json['_http'] = (int) wp_remote_retrieve_response_code( $res );
         return $json;
@@ -168,7 +168,7 @@ class ESSA_License {
     public function activate( $key ) {
         $key = strtoupper( trim( (string) $key ) );
         if ( ! preg_match( '/^EWPS(-[A-Z0-9]{4}){4}$/', $key ) ) {
-            $this->data['message'] = __( 'Klucz ma format EWPS-XXXX-XXXX-XXXX-XXXX.', 'essa-wp-suite' );
+            $this->data['message'] = __( 'The key looks like EWPS-XXXX-XXXX-XXXX-XXXX.', 'essa-wp-suite' );
             $this->save();
             return false;
         }
@@ -225,8 +225,8 @@ class ESSA_License {
 
     /** Instaluje (lub nadpisuje) wtyczkę Pro z serwera licencji i aktywuje ją. Zwraca true|WP_Error. */
     public function install_pro() {
-        if ( ! $this->is_valid() ) return new WP_Error( 'ewps_no_license', __( 'Najpierw aktywuj ważny klucz licencji.', 'essa-wp-suite' ) );
-        if ( ! current_user_can( 'install_plugins' ) ) return new WP_Error( 'ewps_cap', __( 'Brak uprawnień do instalacji wtyczek.', 'essa-wp-suite' ) );
+        if ( ! $this->is_valid() ) return new WP_Error( 'ewps_no_license', __( 'Activate a valid license key first.', 'essa-wp-suite' ) );
+        if ( ! current_user_can( 'install_plugins' ) ) return new WP_Error( 'ewps_cap', __( 'You do not have permission to install plugins.', 'essa-wp-suite' ) );
 
         require_once ABSPATH . 'wp-admin/includes/file.php';
         require_once ABSPATH . 'wp-admin/includes/misc.php';
@@ -244,7 +244,7 @@ class ESSA_License {
         if ( is_wp_error( $result ) ) return $result;
         if ( ! $result ) {
             $errors = $skin->get_upgrade_messages();
-            return new WP_Error( 'ewps_install_failed', implode( ' ', array_map( 'wp_strip_all_tags', (array) $errors ) ) ?: __( 'Instalacja nie powiodła się.', 'essa-wp-suite' ) );
+            return new WP_Error( 'ewps_install_failed', implode( ' ', array_map( 'wp_strip_all_tags', (array) $errors ) ) ?: __( 'Installation failed.', 'essa-wp-suite' ) );
         }
         $activated = activate_plugin( self::PRO_BASENAME );
         return is_wp_error( $activated ) ? $activated : true;
@@ -278,12 +278,12 @@ class ESSA_License {
 
     public function render_tab() {
         $notices = array(
-            'activated'     => array( 'success', __( 'Licencja aktywowana na tej domenie.', 'essa-wp-suite' ) ),
-            'deactivated'   => array( 'info',    __( 'Licencja zwolniona — możesz jej użyć na innej stronie.', 'essa-wp-suite' ) ),
-            'valid'         => array( 'success', __( 'Licencja sprawdzona: ważna.', 'essa-wp-suite' ) ),
-            'installed'     => array( 'success', __( 'ESSA WP Suite Pro zainstalowane i aktywowane. Moduły Pro są już na dashboardzie.', 'essa-wp-suite' ) ),
-            'error'         => array( 'error',   $this->data['message'] ?: __( 'Nie udało się.', 'essa-wp-suite' ) ),
-            'install_error' => array( 'error',   $this->data['message'] ?: __( 'Instalacja Pro nie powiodła się.', 'essa-wp-suite' ) ),
+            'activated'     => array( 'success', __( 'License activated on this domain.', 'essa-wp-suite' ) ),
+            'deactivated'   => array( 'info',    __( 'License released — you can use it on another site.', 'essa-wp-suite' ) ),
+            'valid'         => array( 'success', __( 'License checked: valid.', 'essa-wp-suite' ) ),
+            'installed'     => array( 'success', __( 'ESSA WP Suite Pro installed and activated. The Pro modules are on the dashboard now.', 'essa-wp-suite' ) ),
+            'error'         => array( 'error',   $this->data['message'] ?: __( 'That did not work.', 'essa-wp-suite' ) ),
+            'install_error' => array( 'error',   $this->data['message'] ?: __( 'Pro installation failed.', 'essa-wp-suite' ) ),
         );
         if ( ! empty( $_GET['lic'] ) && isset( $notices[ $_GET['lic'] ] ) ) {
             $n = $notices[ sanitize_key( $_GET['lic'] ) ];
@@ -298,7 +298,7 @@ class ESSA_License {
                     <?php wp_nonce_field( 'ewps_license', 'ewps_license_nonce' ); ?>
                     <table class="form-table" role="presentation">
                         <tr>
-                            <th scope="row"><?php esc_html_e( 'Klucz licencji Pro', 'essa-wp-suite' ); ?></th>
+                            <th scope="row"><?php esc_html_e( 'Pro license key', 'essa-wp-suite' ); ?></th>
                             <td>
                                 <?php if ( $has_key ) : ?>
                                     <code style="font-size:14px"><?php echo esc_html( $this->masked_key() ); ?></code>
@@ -306,60 +306,60 @@ class ESSA_License {
                                 <?php else : ?>
                                     <input type="text" name="ewps_license_key" class="regular-text code" placeholder="EWPS-XXXX-XXXX-XXXX-XXXX" autocomplete="off">
                                 <?php endif; ?>
-                                <?php if ( defined( 'EWPS_LICENSE_KEY' ) ) : ?><p class="description"><?php esc_html_e( 'Klucz zdefiniowany w wp-config.php (EWPS_LICENSE_KEY).', 'essa-wp-suite' ); ?></p><?php endif; ?>
+                                <?php if ( defined( 'EWPS_LICENSE_KEY' ) ) : ?><p class="description"><?php esc_html_e( 'Key defined in wp-config.php (EWPS_LICENSE_KEY).', 'essa-wp-suite' ); ?></p><?php endif; ?>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><?php esc_html_e( 'Stan', 'essa-wp-suite' ); ?></th>
+                            <th scope="row"><?php esc_html_e( 'Status', 'essa-wp-suite' ); ?></th>
                             <td>
                                 <strong class="<?php echo $valid ? 'ewps-status--on' : 'ewps-status--off'; ?>"><?php echo esc_html( $this->status_label() ); ?></strong>
-                                <?php if ( $this->data['expires'] ) : ?><br><span class="description"><?php printf( esc_html__( 'Ważna do: %s', 'essa-wp-suite' ), esc_html( date_i18n( get_option( 'date_format' ), strtotime( $this->data['expires'] ) ) ) ); ?></span><?php endif; ?>
-                                <?php if ( $this->data['sites_max'] ) : ?><br><span class="description"><?php printf( esc_html__( 'Strony: %1$d z %2$d', 'essa-wp-suite' ), (int) $this->data['sites_used'], (int) $this->data['sites_max'] ); ?></span><?php endif; ?>
+                                <?php if ( $this->data['expires'] ) : ?><br><span class="description"><?php printf( esc_html__( 'Valid until: %s', 'essa-wp-suite' ), esc_html( date_i18n( get_option( 'date_format' ), strtotime( $this->data['expires'] ) ) ) ); ?></span><?php endif; ?>
+                                <?php if ( $this->data['sites_max'] ) : ?><br><span class="description"><?php printf( esc_html__( 'Sites: %1$d of %2$d', 'essa-wp-suite' ), (int) $this->data['sites_used'], (int) $this->data['sites_max'] ); ?></span><?php endif; ?>
                                 <?php if ( $this->data['message'] && ! $valid ) : ?><br><span class="description" style="color:#c00"><?php echo esc_html( $this->data['message'] ); ?></span><?php endif; ?>
-                                <?php if ( $this->data['checked'] ) : ?><br><span class="description"><?php printf( esc_html__( 'Ostatnie sprawdzenie: %s', 'essa-wp-suite' ), esc_html( human_time_diff( (int) $this->data['checked'] ) . ' ' . __( 'temu', 'essa-wp-suite' ) ) ); ?></span><?php endif; ?>
+                                <?php if ( $this->data['checked'] ) : ?><br><span class="description"><?php printf( esc_html__( 'Last checked: %s', 'essa-wp-suite' ), esc_html( human_time_diff( (int) $this->data['checked'] ) . ' ' . __( 'ago', 'essa-wp-suite' ) ) ); ?></span><?php endif; ?>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row"><?php esc_html_e( 'Domena', 'essa-wp-suite' ); ?></th>
+                            <th scope="row"><?php esc_html_e( 'Domain', 'essa-wp-suite' ); ?></th>
                             <td><code><?php echo esc_html( self::domain() ); ?></code></td>
                         </tr>
                     </table>
                     <p>
                         <?php if ( ! $has_key ) : ?>
-                            <button type="submit" name="ewps_license_action" value="activate" class="button button-primary"><?php esc_html_e( 'Aktywuj licencję', 'essa-wp-suite' ); ?></button>
+                            <button type="submit" name="ewps_license_action" value="activate" class="button button-primary"><?php esc_html_e( 'Activate license', 'essa-wp-suite' ); ?></button>
                         <?php else : ?>
-                            <button type="submit" name="ewps_license_action" value="check" class="button"><?php esc_html_e( 'Sprawdź ponownie', 'essa-wp-suite' ); ?></button>
+                            <button type="submit" name="ewps_license_action" value="check" class="button"><?php esc_html_e( 'Check again', 'essa-wp-suite' ); ?></button>
                             <?php if ( ! $valid && 'not_activated' === $this->data['status'] || 'limit' === $this->data['status'] ) : ?>
-                                <button type="submit" name="ewps_license_action" value="activate" class="button button-primary"><?php esc_html_e( 'Aktywuj na tej domenie', 'essa-wp-suite' ); ?></button>
+                                <button type="submit" name="ewps_license_action" value="activate" class="button button-primary"><?php esc_html_e( 'Activate on this domain', 'essa-wp-suite' ); ?></button>
                             <?php endif; ?>
-                            <button type="submit" name="ewps_license_action" value="deactivate" class="button" onclick="return confirm('<?php echo esc_js( __( 'Zwolnić licencję na tej stronie? Moduły Pro przestaną działać.', 'essa-wp-suite' ) ); ?>')"><?php esc_html_e( 'Dezaktywuj / zmień klucz', 'essa-wp-suite' ); ?></button>
+                            <button type="submit" name="ewps_license_action" value="deactivate" class="button" onclick="return confirm('<?php echo esc_js( __( 'Release the license on this site? The Pro modules will stop working.', 'essa-wp-suite' ) ); ?>')"><?php esc_html_e( 'Deactivate / change key', 'essa-wp-suite' ); ?></button>
                         <?php endif; ?>
                     </p>
                     <?php if ( $valid && ! self::pro_active() ) : ?>
                         <div class="ewps-card" style="margin-top:16px">
-                            <h3>🚀 <?php esc_html_e( 'Zainstaluj ESSA WP Suite Pro', 'essa-wp-suite' ); ?></h3>
+                            <h3>🚀 <?php esc_html_e( 'Install ESSA WP Suite Pro', 'essa-wp-suite' ); ?></h3>
                             <p><?php echo self::pro_installed()
-                                ? esc_html__( 'Wtyczka Pro jest na serwerze, ale nieaktywna. Kliknij, żeby ją aktywować (lub nadpisać najnowszą wersją).', 'essa-wp-suite' )
-                                : esc_html__( 'Licencja jest ważna. Jednym kliknięciem pobierzesz paczkę Pro z serwera licencji i aktywujesz moduły.', 'essa-wp-suite' ); ?></p>
-                            <button type="submit" name="ewps_license_action" value="install_pro" class="button button-primary"><?php esc_html_e( 'Pobierz i aktywuj Pro', 'essa-wp-suite' ); ?></button>
+                                ? esc_html__( 'The Pro plugin is on the server but inactive. Click to activate it (or overwrite it with the latest version).', 'essa-wp-suite' )
+                                : esc_html__( 'The license is valid. One click downloads the Pro package from the license server and activates the modules.', 'essa-wp-suite' ); ?></p>
+                            <button type="submit" name="ewps_license_action" value="install_pro" class="button button-primary"><?php esc_html_e( 'Download and activate Pro', 'essa-wp-suite' ); ?></button>
                         </div>
                     <?php endif; ?>
                 </form>
             </div>
             <div class="ewps-sidebar">
                 <div class="ewps-card">
-                    <h3>🏷️ <?php esc_html_e( 'Moduły Pro', 'essa-wp-suite' ); ?></h3>
+                    <h3>🏷️ <?php esc_html_e( 'Pro modules', 'essa-wp-suite' ); ?></h3>
                     <ul>
                         <?php foreach ( ESSA_WP_Suite::pro_catalog() as $mod ) : ?>
                             <li><?php echo esc_html( $mod['icon'] . ' ' . $mod['label'] ); ?></li>
                         <?php endforeach; ?>
                     </ul>
                     <?php if ( ! $valid ) : ?>
-                    <p><a href="<?php echo esc_url( self::shop_url() ); ?>" class="button button-primary" target="_blank" rel="noopener"><?php esc_html_e( 'Kup licencję Pro →', 'essa-wp-suite' ); ?></a></p>
+                    <p><a href="<?php echo esc_url( self::shop_url() ); ?>" class="button button-primary" target="_blank" rel="noopener"><?php esc_html_e( 'Buy a Pro license →', 'essa-wp-suite' ); ?></a></p>
                     <?php endif; ?>
                 </div>
-                <div class="ewps-card ewps-card--tip"><p><?php esc_html_e( 'Jeden klucz = liczba stron z licencji. Strony testowe (localhost, *.local, *.test, staging) nie zużywają miejsc. Przeniesienie strony na nową domenę aktywuje klucz ponownie automatycznie.', 'essa-wp-suite' ); ?></p></div>
-                <div class="ewps-card"><p class="description"><?php printf( esc_html__( 'Serwer licencji: %s', 'essa-wp-suite' ), '<code>' . esc_html( self::server_url() ) . '</code>' ); ?></p></div>
+                <div class="ewps-card ewps-card--tip"><p><?php esc_html_e( 'One key covers the number of sites in your license. Test sites (localhost, *.local, *.test, staging) do not use up slots. Moving a site to a new domain re-activates the key automatically.', 'essa-wp-suite' ); ?></p></div>
+                <div class="ewps-card"><p class="description"><?php printf( esc_html__( 'License server: %s', 'essa-wp-suite' ), '<code>' . esc_html( self::server_url() ) . '</code>' ); ?></p></div>
             </div>
         </div>
         <?php

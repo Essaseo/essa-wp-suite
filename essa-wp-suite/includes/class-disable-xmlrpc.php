@@ -94,10 +94,10 @@ class ESSA_Disable_XMLRPC {
         add_settings_section( 'ewps_xmlrpc_main', '', '__return_false', 'ewps-xmlrpc-settings' );
 
         $fields = array(
-            'xmlrpc_enabled'        => __( 'Włącz moduł (wyłącz XML-RPC)', 'essa-wp-suite' ),
-            'xmlrpc_remove_header'  => __( 'Usuń nagłówek X-Pingback', 'essa-wp-suite' ),
-            'xmlrpc_remove_links'   => __( 'Usuń RSD i wlwmanifest z &lt;head&gt;', 'essa-wp-suite' ),
-            'xmlrpc_block_endpoint' => __( 'Blokuj /xmlrpc.php (zwróć 403)', 'essa-wp-suite' ),
+            'xmlrpc_enabled'        => __( 'Enable module (disable XML-RPC)', 'essa-wp-suite' ),
+            'xmlrpc_remove_header'  => __( 'Remove the X-Pingback header', 'essa-wp-suite' ),
+            'xmlrpc_remove_links'   => __( 'Remove RSD and wlwmanifest from &lt;head&gt;', 'essa-wp-suite' ),
+            'xmlrpc_block_endpoint' => __( 'Block /xmlrpc.php (return 403)', 'essa-wp-suite' ),
         );
 
         foreach ( $fields as $id => $label ) {

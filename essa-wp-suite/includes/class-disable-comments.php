@@ -207,7 +207,7 @@ class ESSA_Disable_Comments {
     public function block_rest_comment_insert( $prepared_comment, $request ) {
         return new WP_Error(
             'rest_comment_disabled',
-            __( 'Komentarze są wyłączone na tej stronie.', 'essa-wp-suite' ),
+            __( 'Comments are disabled on this site.', 'essa-wp-suite' ),
             array( 'status' => 403 )
         );
     }
@@ -242,7 +242,7 @@ class ESSA_Disable_Comments {
         if ( 'all' === $this->opt( 'dc_scope' ) ) {
             if ( in_array( $pagenow, array( 'comment.php', 'edit-comments.php' ), true ) ) {
                 wp_die(
-                    esc_html__( 'Komentarze są wyłączone przez ESSA WP Suite.', 'essa-wp-suite' ),
+                    esc_html__( 'Comments are disabled by ESSA WP Suite.', 'essa-wp-suite' ),
                     '',
                     array( 'response' => 403, 'back_link' => true )
                 );
@@ -296,13 +296,13 @@ class ESSA_Disable_Comments {
         add_settings_section( 'eee_dc_main', '', '__return_false', 'eee-dc-settings' );
 
         $fields = array(
-            'dc_enabled'        => array( __( 'Włącz moduł', 'essa-wp-suite' ),                   'field_checkbox' ),
-            'dc_scope'          => array( __( 'Zakres wyłączenia', 'essa-wp-suite' ),              'field_scope' ),
-            'dc_post_types'     => array( __( 'Typy postów (gdy "Wybrane")', 'essa-wp-suite' ),    'field_post_types' ),
-            'dc_disable_rest'   => array( __( 'Blokuj komentarze przez REST API', 'essa-wp-suite' ), 'field_checkbox' ),
-            'dc_disable_xmlrpc' => array( __( 'Blokuj komentarze przez XML-RPC', 'essa-wp-suite' ), 'field_checkbox' ),
-            'dc_hide_admin_ui'  => array( __( 'Ukryj UI komentarzy w adminie', 'essa-wp-suite' ),   'field_checkbox' ),
-            'dc_remove_feeds'   => array( __( 'Wyłącz feedy komentarzy', 'essa-wp-suite' ),          'field_checkbox' ),
+            'dc_enabled'        => array( __( 'Enable module', 'essa-wp-suite' ),                   'field_checkbox' ),
+            'dc_scope'          => array( __( 'Scope', 'essa-wp-suite' ),              'field_scope' ),
+            'dc_post_types'     => array( __( 'Post types (when "Selected")', 'essa-wp-suite' ),    'field_post_types' ),
+            'dc_disable_rest'   => array( __( 'Block comments via REST API', 'essa-wp-suite' ), 'field_checkbox' ),
+            'dc_disable_xmlrpc' => array( __( 'Block comments via XML-RPC', 'essa-wp-suite' ), 'field_checkbox' ),
+            'dc_hide_admin_ui'  => array( __( 'Hide the comment interface in the admin', 'essa-wp-suite' ),   'field_checkbox' ),
+            'dc_remove_feeds'   => array( __( 'Disable comment feeds', 'essa-wp-suite' ),          'field_checkbox' ),
         );
 
         foreach ( $fields as $id => $data ) {
@@ -353,8 +353,8 @@ class ESSA_Disable_Comments {
     public function field_scope( $args ) {
         $val = $this->opt( 'dc_scope' );
         $options = array(
-            'all'      => __( 'Wszystkie typy postów', 'essa-wp-suite' ),
-            'selected' => __( 'Wybrane typy postów', 'essa-wp-suite' ),
+            'all'      => __( 'All post types', 'essa-wp-suite' ),
+            'selected' => __( 'Selected post types', 'essa-wp-suite' ),
         );
         echo '<select name="eee_dc_settings[dc_scope]" id="eee_dc_scope">';
         foreach ( $options as $k => $label ) {
@@ -385,7 +385,7 @@ class ESSA_Disable_Comments {
             );
         }
         echo '</div>';
-        echo '<p class="description">' . esc_html__( 'Aktywne tylko gdy zakres = "Wybrane typy postów".', 'essa-wp-suite' ) . '</p>';
+        echo '<p class="description">' . esc_html__( 'Only used when scope = "Selected post types".', 'essa-wp-suite' ) . '</p>';
     }
 
     // ── Narzędzie: usuń komentarze ────────────
@@ -400,38 +400,38 @@ class ESSA_Disable_Comments {
         $appr  = $total - $spam - $trash - $pend;
         ?>
         <div class="eee-card eee-card--danger">
-            <h3>🗑️ <?php esc_html_e( 'Usuń komentarze z bazy', 'essa-wp-suite' ); ?></h3>
+            <h3>🗑️ <?php esc_html_e( 'Delete comments from the database', 'essa-wp-suite' ); ?></h3>
             <table class="eee-stats-table">
-                <tr><td><?php esc_html_e( 'Zatwierdzone', 'essa-wp-suite' ); ?></td><td><strong><?php echo (int) $appr; ?></strong></td></tr>
-                <tr><td><?php esc_html_e( 'Oczekujące', 'essa-wp-suite' ); ?></td><td><strong><?php echo (int) $pend; ?></strong></td></tr>
+                <tr><td><?php esc_html_e( 'Approved', 'essa-wp-suite' ); ?></td><td><strong><?php echo (int) $appr; ?></strong></td></tr>
+                <tr><td><?php esc_html_e( 'Pending', 'essa-wp-suite' ); ?></td><td><strong><?php echo (int) $pend; ?></strong></td></tr>
                 <tr><td><?php esc_html_e( 'Spam', 'essa-wp-suite' ); ?></td><td><strong><?php echo (int) $spam; ?></strong></td></tr>
-                <tr><td><?php esc_html_e( 'Kosz', 'essa-wp-suite' ); ?></td><td><strong><?php echo (int) $trash; ?></strong></td></tr>
-                <tr class="eee-total"><td><?php esc_html_e( 'Łącznie', 'essa-wp-suite' ); ?></td><td><strong><?php echo (int) $total; ?></strong></td></tr>
+                <tr><td><?php esc_html_e( 'Trash', 'essa-wp-suite' ); ?></td><td><strong><?php echo (int) $trash; ?></strong></td></tr>
+                <tr class="eee-total"><td><?php esc_html_e( 'Total', 'essa-wp-suite' ); ?></td><td><strong><?php echo (int) $total; ?></strong></td></tr>
             </table>
 
             <?php if ( $total > 0 ) : ?>
             <form method="post" action="" id="eee-delete-comments-form">
                 <?php wp_nonce_field( 'eee_delete_comments', 'eee_dc_nonce' ); ?>
                 <p>
-                    <label><?php esc_html_e( 'Usuń:', 'essa-wp-suite' ); ?></label>
+                    <label><?php esc_html_e( 'Delete:', 'essa-wp-suite' ); ?></label>
                     <select name="eee_delete_type">
-                        <option value="all"><?php esc_html_e( 'Wszystkie', 'essa-wp-suite' ); ?></option>
-                        <option value="spam"><?php esc_html_e( 'Tylko spam', 'essa-wp-suite' ); ?></option>
-                        <option value="trash"><?php esc_html_e( 'Tylko kosz', 'essa-wp-suite' ); ?></option>
-                        <option value="pending"><?php esc_html_e( 'Tylko oczekujące', 'essa-wp-suite' ); ?></option>
+                        <option value="all"><?php esc_html_e( 'All', 'essa-wp-suite' ); ?></option>
+                        <option value="spam"><?php esc_html_e( 'Spam only', 'essa-wp-suite' ); ?></option>
+                        <option value="trash"><?php esc_html_e( 'Trash only', 'essa-wp-suite' ); ?></option>
+                        <option value="pending"><?php esc_html_e( 'Pending only', 'essa-wp-suite' ); ?></option>
                     </select>
                 </p>
                 <p class="eee-danger-warning">
-                    ⚠️ <?php esc_html_e( 'Ta operacja jest nieodwracalna!', 'essa-wp-suite' ); ?>
+                    ⚠️ <?php esc_html_e( 'This cannot be undone!', 'essa-wp-suite' ); ?>
                 </p>
                 <button type="submit" name="eee_action" value="delete_comments"
                         class="button button-secondary eee-btn-danger"
-                        onclick="return confirm('<?php echo esc_js( __( 'Na pewno? Nie można cofnąć!', 'essa-wp-suite' ) ); ?>')">
-                    <?php esc_html_e( 'Usuń komentarze', 'essa-wp-suite' ); ?>
+                        onclick="return confirm('<?php echo esc_js( __( 'Are you sure? This cannot be undone!', 'essa-wp-suite' ) ); ?>')">
+                    <?php esc_html_e( 'Delete comments', 'essa-wp-suite' ); ?>
                 </button>
             </form>
             <?php else : ?>
-            <p class="description"><?php esc_html_e( 'Brak komentarzy w bazie danych.', 'essa-wp-suite' ); ?></p>
+            <p class="description"><?php esc_html_e( 'No comments in the database.', 'essa-wp-suite' ); ?></p>
             <?php endif; ?>
         </div>
         <?php
