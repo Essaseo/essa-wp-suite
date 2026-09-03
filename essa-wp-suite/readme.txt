@@ -4,7 +4,7 @@ Tags: security, login, maintenance, smtp, comments, xml-rpc, hardening, activity
 Requires at least: 5.6
 Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,9 @@ Usuwa tylko wygasłe. Aktywne transjenty to cache, którego skasowanie spowolni�
 Tak, per strona. Odinstalowanie czyści dane na wszystkich stronach sieci.
 
 == Changelog ==
+
+= 2.1.0 =
+* Dodano: sekcja usług ESSA SEO i „Moduł na życzenie” na dashboardzie, karta w sidebarze, jednorazowe powiadomienie powitalne (do wyłączenia jednym kliknięciem).
 
 = 2.0.0 =
 * Podział na Free i Pro. Free: Email Encoder, Disable Comments, Disable XML-RPC, WP Hardening, Admin Notices, Maintenance Mode. Pro (osobna wtyczka, klucz ze sklepu): Login Security, SMTP, DB Cleaner, Admin Cleaner, Auto Updates, White Label, Activity Log.

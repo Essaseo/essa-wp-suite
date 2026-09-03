@@ -5,6 +5,13 @@ Format: [Semantic Versioning](https://semver.org/) — MAJOR.MINOR.PATCH
 
 ---
 
+## [2.1.0] — 2026-09-03
+
+### Dodano
+- **Promocja usług ESSA SEO** w panelu (`includes/class-promo.php`): sekcja na dashboardzie z kartami usług (pozycjonowanie, wizytówka Google, Google Ads i Meta Ads, strony WWW) i kartą „Moduł na życzenie”, karta w sidebarze zakładek, jednorazowe powiadomienie po aktywacji z przyciskiem „Nie pokazuj więcej”. Treść z serwera licencji (`GET /v1/promo`, plik `promo.json` na VPS — zmiana bez nowej wersji), cache 12 h, wbudowana wersja zapasowa, linki z UTM. White Label (Pro) chowa całość.
+
+---
+
 ## [2.0.0] — 2026-09-03
 
 ### Zmieniono — podział Free / Pro

@@ -3,7 +3,7 @@
  * Plugin Name:       ESSA WP Suite
  * Plugin URI:        https://essaseo.pl/essa-wp-suite/
  * Description:       Zestaw narzędzi administracyjnych WordPress od ESSA SEO: Email Encoder, Disable Comments, Disable XML-RPC, WP Hardening, Admin Notices, Maintenance Mode. Wersja Pro dodaje Login Security, SMTP, DB Cleaner, Admin Cleaner, Auto Updates, White Label i Activity Log.
- * Version:           2.0.0
+ * Version:           2.1.0
  * Author:            ESSA SEO Digital Agency
  * Author URI:        https://essaseo.pl
  * License:           GPL-2.0-or-later
@@ -17,7 +17,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'EWPS_VERSION',     '2.0.0' );
+define( 'EWPS_VERSION',     '2.1.0' );
 define( 'EWPS_MIN_PHP',     '7.2' );
 define( 'EWPS_MIN_WP',      '5.6' );
 define( 'EWPS_PLUGIN_FILE', __FILE__ );
@@ -60,6 +60,7 @@ require_once EWPS_PLUGIN_DIR . 'includes/class-wp-hardening.php';
 require_once EWPS_PLUGIN_DIR . 'includes/class-admin-notices.php';
 require_once EWPS_PLUGIN_DIR . 'includes/class-license.php';
 require_once EWPS_PLUGIN_DIR . 'includes/class-updater.php';
+require_once EWPS_PLUGIN_DIR . 'includes/class-promo.php';
 
 // ─── Klasa główna ────────────────────────────────────────────────────────────
 
@@ -103,6 +104,7 @@ class ESSA_WP_Suite {
         ESSA_Admin_Notices::get_instance();
         ESSA_License::get_instance();
         ESSA_Updater::get_instance();
+        ESSA_Promo::get_instance();
 
         add_action( 'plugins_loaded',        array( $this, 'load_textdomain' ) );
         add_action( 'admin_menu',            array( $this, 'admin_menu' ) );
@@ -547,7 +549,7 @@ class ESSA_WP_Suite {
                     <?php settings_fields( $group ); do_settings_sections( $page ); submit_button( __( 'Zapisz', 'essa-wp-suite' ) ); ?>
                 </form>
             </div>
-            <div class="ewps-sidebar"><?php if ( is_callable( $sidebar_cb ) ) call_user_func( $sidebar_cb ); ?></div>
+            <div class="ewps-sidebar"><?php if ( is_callable( $sidebar_cb ) ) call_user_func( $sidebar_cb ); ESSA_Promo::get_instance()->render_sidebar_card(); ?></div>
         </div>
         <?php
     }
@@ -656,6 +658,7 @@ class ESSA_WP_Suite {
                         <p class="ewps-upsell"><a href="<?php echo esc_url( ESSA_License::shop_url() ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Odblokuj 7 modułów Pro jednym kluczem →', 'essa-wp-suite' ); ?></a></p>
                         <?php endif; ?>
                     </div>
+                    <?php ESSA_Promo::get_instance()->render_dashboard_section(); ?>
                 </div>
 
             <?php elseif ( 'license' === $active ) : ?>
