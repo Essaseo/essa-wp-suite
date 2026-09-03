@@ -1,0 +1,63 @@
+name: Release
+
+# Tag "vX.Y.Z" → lint + testy → ZIP → wydanie GitHub z paczką.
+# Wtyczka na stronach klientów pyta o /releases/latest i widzi aktualizację w Kokpicie.
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: none
+
+      - name: Wersja z taga musi zgadzać się z nagłówkiem wtyczki
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          VER=$(grep -m1 "^ \* Version:" essa-wp-suite/essa-wp-suite.php | sed 's/.*Version:[[:space:]]*//' | tr -d '\r')
+          CONST=$(grep -m1 "define( 'EWPS_VERSION'" essa-wp-suite/essa-wp-suite.php | sed "s/.*'\([0-9.]*\)'.*/\1/")
+          echo "tag=$TAG header=$VER const=$CONST"
+          [ "$TAG" = "$VER" ] && [ "$TAG" = "$CONST" ] || { echo "Wersje się nie zgadzają"; exit 1; }
+          echo "VERSION=$TAG" >> "$GITHUB_ENV"
+
+      - name: Lint
+        run: |
+          find essa-wp-suite -name '*.php' -print0 | xargs -0 -n1 php -l | grep -v "No syntax errors" && exit 1 || true
+
+      - name: Testy
+        run: |
+          php tests/test-encoder.php
+          php tests/smoke.php
+
+      - name: Paczka
+        run: |
+          mkdir -p dist
+          zip -qr "dist/essa-wp-suite-${VERSION}.zip" essa-wp-suite -x '*.DS_Store'
+          unzip -l "dist/essa-wp-suite-${VERSION}.zip" | tail -1
+
+      - name: Zmiany z CHANGELOG
+        run: |
+          awk -v ver="$VERSION" '
+            $0 ~ "^## \\[" ver "\\]" { on=1; next }
+            on && /^## \[/ { exit }
+            on { print }
+          ' essa-wp-suite/CHANGELOG.md > release-notes.md
+          [ -s release-notes.md ] || echo "Wersja $VERSION" > release-notes.md
+          head -20 release-notes.md
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: "ESSA WP Suite ${{ env.VERSION }}"
+          body_path: release-notes.md
+          files: dist/essa-wp-suite-${{ env.VERSION }}.zip

@@ -1,0 +1,674 @@
+/* ═══════════════════════════════════════════
+   ESSA WP Suite — Admin Styles
+   ═══════════════════════════════════════════ */
+
+:root {
+  --ewps-bg:      #0d0c1d;
+  --ewps-card:    #13122a;
+  --ewps-border:  #1e1d3a;
+  --ewps-mint:    #2CFFC0;
+  --ewps-purple:  #722BF5;
+  --ewps-danger:  #d63638;
+  --ewps-warn:    #dba617;
+  --ewps-text:    #1d2327;
+  --ewps-muted:   #646970;
+}
+
+/* ── Header ─────────────────────────────────── */
+.ewps-wrap { max-width: 1200px; }
+
+.ewps-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 16px;
+  border-bottom: 2px solid #e2e2e7;
+  margin-bottom: 0;
+}
+
+.ewps-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ewps-logo-mark {
+  font-size: 36px;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--ewps-purple), var(--ewps-mint));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ewps-title {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  line-height: 1.2 !important;
+}
+
+.ewps-subtitle {
+  font-size: 12px;
+  color: var(--ewps-muted);
+}
+.ewps-subtitle a { color: var(--ewps-purple); text-decoration: none; font-weight: 600; }
+.ewps-subtitle a:hover { color: var(--ewps-mint); }
+
+.ewps-version {
+  font-size: 12px;
+  font-weight: 600;
+  background: #f0f0f1;
+  color: var(--ewps-muted);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ── Tabs ─────────────────────────────────────── */
+.ewps-tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 2px solid #e2e2e7;
+  margin-bottom: 0;
+  padding-top: 8px;
+}
+
+.ewps-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  text-decoration: none;
+  color: var(--ewps-muted);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px 6px 0 0;
+  border: 2px solid transparent;
+  border-bottom: none;
+  transition: color .15s, background .15s;
+  margin-bottom: -2px;
+  white-space: nowrap;
+}
+
+.ewps-tab:hover {
+  color: var(--ewps-text);
+  background: #f6f7f7;
+}
+
+.ewps-tab--active {
+  color: var(--ewps-text);
+  background: #fff;
+  border-color: #e2e2e7;
+  border-bottom-color: #fff;
+  font-weight: 700;
+}
+
+.ewps-tab__icon { font-size: 15px; }
+
+/* ── Content ─────────────────────────────────── */
+.ewps-content {
+  background: #fff;
+  border: 2px solid #e2e2e7;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 28px 28px 20px;
+}
+
+/* ── Layout ──────────────────────────────────── */
+.ewps-layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.ewps-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.ewps-main .form-table th { width: 220px; }
+
+.ewps-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+/* ── Cards ───────────────────────────────────── */
+.ewps-card {
+  background: #f6f7f7;
+  border: 1px solid #e2e2e7;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+.ewps-card h3 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ewps-text);
+}
+
+.ewps-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ewps-muted);
+  margin: 0;
+}
+
+.ewps-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ewps-card ul li {
+  font-size: 13px;
+  color: var(--ewps-muted);
+  padding: 3px 0;
+  padding-left: 18px;
+  position: relative;
+}
+.ewps-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--ewps-mint); font-weight: 700; }
+
+.ewps-card pre {
+  background: var(--ewps-bg);
+  color: #cdd6f4;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 8px 0 0;
+}
+
+/* ── Card modifiers ──────────────────────────── */
+.ewps-card--tip {
+  background: #fff8e1;
+  border-color: var(--ewps-warn);
+}
+.ewps-card--tip p { color: #7a5c00; }
+
+.ewps-card--danger {
+  background: #fff0f0;
+  border-color: var(--ewps-danger);
+}
+.ewps-card--danger h3 { color: var(--ewps-danger); }
+
+.ewps-card--test .regular-text { width: 100%; margin-bottom: 8px; }
+.ewps-card--test .button       { width: 100%; }
+
+#ewps-test-output {
+  background: var(--ewps-bg);
+  color: #a6e3a1;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  word-break: break-all;
+}
+
+/* ── Disable Comments tool ───────────────────── */
+.eee-stats-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 12px; }
+.eee-stats-table td { padding: 4px 4px; border-bottom: 1px solid #e2e2e7; color: var(--ewps-muted); }
+.eee-stats-table td:last-child { text-align: right; font-weight: 600; color: var(--ewps-text); }
+.eee-stats-table tr.eee-total td { font-weight: 700; border-top: 2px solid var(--ewps-danger); border-bottom: none; color: var(--ewps-text); }
+
+.eee-danger-warning { color: var(--ewps-danger); font-size: 12px; margin: 8px 0; }
+.eee-btn-danger { border-color: var(--ewps-danger) !important; color: var(--ewps-danger) !important; width: 100%; }
+.eee-btn-danger:hover { background: var(--ewps-danger) !important; color: #fff !important; }
+
+/* ── Login Security — blocked IPs ───────────── */
+.ewps-blocked-ip {
+  background: #fff0f0;
+  border: 1px solid var(--ewps-danger);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.ewps-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 6px;
+}
+
+.ewps-badge--danger { background: var(--ewps-danger); color: #fff; }
+
+/* ── Checkboxes (Disable Comments post types) ── */
+.eee-checkboxes label, .ewps-checkboxes label { display: inline-block; margin-bottom: 5px; font-size: 13px; }
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 1024px) {
+  .ewps-layout { flex-direction: column; }
+  .ewps-sidebar { width: 100%; }
+}
+
+@media (max-width: 782px) {
+  .ewps-tabs { flex-wrap: wrap; }
+  .ewps-tab { flex: 1 1 auto; justify-content: center; }
+  .ewps-tab__label { display: none; }
+}
+
+/* ═══ Dashboard ══════════════════════════════════════════════════════════════ */
+
+.ewps-header__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ewps-modules-badge {
+  font-size: 12px;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--ewps-purple), var(--ewps-mint));
+  color: #0d0c1d;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.ewps-dashboard__intro {
+  font-size: 14px;
+  color: var(--ewps-muted);
+  margin: 0 0 24px;
+}
+
+/* ── Module Grid ─────────────────────────────────────────────────────── */
+
+.ewps-module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.ewps-module-card {
+  background: #fff;
+  border: 2px solid #e2e2e7;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color .2s, box-shadow .2s, transform .15s;
+  position: relative;
+  overflow: hidden;
+}
+
+.ewps-module-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--mod-color, #e2e2e7);
+  transition: height .2s;
+}
+
+.ewps-module-card:hover {
+  border-color: var(--mod-color, #c3c4c7);
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
+
+.ewps-module-card--active {
+  border-color: var(--mod-color);
+  background: #fafffe;
+}
+
+.ewps-module-card--active::before { height: 4px; }
+
+.ewps-module-card--inactive { opacity: .75; }
+.ewps-module-card--inactive:hover { opacity: 1; }
+
+/* ── Card header ─────────────────────────────────────────────────────── */
+
+.ewps-module-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ewps-module-card__icon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ewps-module-card__meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.ewps-module-card__name {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ewps-text);
+  margin-bottom: 2px;
+}
+
+.ewps-module-card__status {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.ewps-status--on  { color: #00a32a; }
+.ewps-status--off { color: var(--ewps-muted); }
+
+/* ── Toggle Switch ───────────────────────────────────────────────────── */
+
+.ewps-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #d0d0d5;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background .2s;
+  outline: none;
+}
+
+.ewps-toggle:focus-visible {
+  box-shadow: 0 0 0 3px rgba(114,43,245,.35);
+}
+
+.ewps-toggle--on {
+  background: var(--mod-color, var(--ewps-mint));
+}
+
+.ewps-toggle__knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform .2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  pointer-events: none;
+}
+
+.ewps-toggle--on .ewps-toggle__knob {
+  transform: translateX(20px);
+}
+
+.ewps-toggle--loading {
+  opacity: .6;
+  cursor: wait;
+}
+
+.ewps-toggle--loading .ewps-toggle__knob {
+  animation: ewps-pulse .6s ease-in-out infinite;
+}
+
+@keyframes ewps-pulse {
+  0%,100% { opacity: 1; }
+  50%      { opacity: .4; }
+}
+
+/* ── Card body ───────────────────────────────────────────────────────── */
+
+.ewps-module-card__desc {
+  font-size: 13px;
+  color: var(--ewps-muted);
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.ewps-module-card__features {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.ewps-module-card__features li {
+  font-size: 12px;
+  color: var(--ewps-muted);
+  padding: 2px 0 2px 16px;
+  position: relative;
+}
+
+.ewps-module-card__features li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--mod-color, var(--ewps-purple));
+  font-weight: 700;
+}
+
+.ewps-module-card__link {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ewps-purple);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s;
+}
+
+.ewps-module-card__link:hover {
+  color: var(--ewps-mint);
+  border-bottom-color: var(--ewps-mint);
+}
+
+/* ── Dashboard Footer ────────────────────────────────────────────────── */
+
+.ewps-dashboard__footer {
+  border-top: 1px solid #e2e2e7;
+  padding-top: 20px;
+}
+
+.ewps-quick-stats {
+  display: flex;
+  gap: 32px;
+}
+
+.ewps-stat {
+  text-align: center;
+}
+
+.ewps-stat__num {
+  display: block;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ewps-text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.ewps-stat__label {
+  font-size: 12px;
+  color: var(--ewps-muted);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .ewps-module-grid {
+    grid-template-columns: 1fr;
+  }
+  .ewps-quick-stats {
+    gap: 16px;
+  }
+}
+
+/* ═══ Sidebar menu active state per tab ═══════════════════════════════════ */
+
+/* Podświetl aktywną pozycję podmenu gdy pasuje do aktywnego taba */
+.ewps-submenu-active > a {
+    color: #fff !important;
+    background: #2c3338 !important;
+}
+
+/* ═══ Activity Log ═══════════════════════════════════════════════════════════ */
+
+.ewps-log-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.ewps-log-count { font-size: 13px; color: var(--ewps-muted); }
+
+.ewps-log-table { font-size: 13px; }
+.ewps-log-table thead th { background: #f6f7f7; }
+
+.ewps-role-badge {
+  display: inline-block;
+  background: #f0f0f1;
+  border-radius: 10px;
+  padding: 1px 8px;
+  font-size: 11px;
+  color: var(--ewps-muted);
+}
+
+.ewps-obj-type {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #1a73e8;
+  border-radius: 4px;
+  padding: 0 5px;
+  font-size: 10px;
+  font-weight: 600;
+  margin-right: 4px;
+  text-transform: uppercase;
+}
+
+.ewps-log-pagination {
+  margin-top: 10px;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* ═══ DB Cleaner ═════════════════════════════════════════════════════════════ */
+
+.ewps-db-stats { display: flex; flex-direction: column; gap: 6px; }
+
+.ewps-db-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f1;
+  font-size: 13px;
+}
+
+.ewps-db-stat-icon { font-size: 16px; width: 20px; text-align: center; }
+.ewps-db-stat-label { flex: 1; color: var(--ewps-text); }
+.ewps-db-stat-count {
+  font-weight: 700;
+  color: var(--ewps-text);
+  min-width: 36px;
+  text-align: right;
+}
+
+.ewps-db-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0 4px;
+  font-size: 13px;
+  border-top: 2px solid var(--ewps-border);
+  margin-top: 4px;
+}
+
+/* ═══ SMTP Presets ═══════════════════════════════════════════════════════════ */
+
+.ewps-smtp-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.ewps-smtp-preset {
+  font-size: 12px !important;
+  padding: 2px 10px !important;
+  height: auto !important;
+}
+
+#ewps-smtp-test-result {
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+#ewps-smtp-test-result.success { background: #d4edda; color: #155724; }
+#ewps-smtp-test-result.error   { background: #f8d7da; color: #721c24; }
+
+/* ═══ Back button & breadcrumb ══════════════════════════════════════════════ */
+
+.ewps-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--ewps-purple);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 10px;
+  border: 1px solid #e2e2e7;
+  border-radius: 6px;
+  background: #fff;
+  transition: background .15s, border-color .15s;
+}
+.ewps-back-btn:hover {
+  background: var(--ewps-purple);
+  color: #fff;
+  border-color: var(--ewps-purple);
+}
+
+.ewps-breadcrumb {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ewps-text);
+}
+
+/* ═══ Dashboard — no top tabs, only cards ═══════════════════════════════════ */
+
+.ewps-content--dashboard {
+  background: transparent;
+  border: none;
+  padding: 20px 0 0;
+}
+
+.ewps-content--module {
+  background: #fff;
+  border: 2px solid #e2e2e7;
+  border-radius: 8px;
+  padding: 28px 28px 20px;
+  margin-top: 16px;
+}
+
+/* ═══ Maintenance color pickers row ════════════════════════════════════════ */
+
+.ewps-color-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+/* ── Pro / licencja ─────────────────────────── */
+.ewps-menu-pro { display:inline-block; font-size:9px; font-weight:800; letter-spacing:.6px; padding:1px 5px; border-radius:4px; background:#722BF5; color:#fff; vertical-align:middle; margin-left:4px; line-height:1.4; }
+#adminmenu .ewps-menu-pro { background:rgba(114,43,245,.85); }
+.ewps-module-card--locked { opacity:.85; border-style:dashed; }
+.ewps-module-card--locked .ewps-module-card__icon { filter:grayscale(1); }
+.ewps-status--locked { color:#722BF5; font-weight:600; }
+.ewps-lock { font-size:18px; line-height:1; opacity:.7; }
+.ewps-license-badge { display:inline-block; font-size:11px; font-weight:800; letter-spacing:.8px; padding:3px 9px; border-radius:12px; text-decoration:none; border:1px solid currentColor; }
+.ewps-license-badge:hover { text-decoration:none; opacity:.85; }
+.ewps-card--locked h2 { margin-top:0; }
+.ewps-card--locked ul { margin:12px 0 18px; }
+.ewps-upsell { text-align:center; margin:14px 0 0; }
+.ewps-upsell a { font-weight:600; }
