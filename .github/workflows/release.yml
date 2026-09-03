@@ -44,6 +44,7 @@ jobs:
         run: |
           mkdir -p dist
           zip -qr "dist/essa-wp-suite-${VERSION}.zip" essa-wp-suite -x '*.DS_Store'
+          cp "dist/essa-wp-suite-${VERSION}.zip" dist/essa-wp-suite.zip   # stała nazwa → /releases/latest/download/essa-wp-suite.zip (sklep)
           unzip -l "dist/essa-wp-suite-${VERSION}.zip" | tail -1
 
       - name: Zmiany z CHANGELOG
@@ -60,4 +61,6 @@ jobs:
         with:
           name: "ESSA WP Suite ${{ env.VERSION }}"
           body_path: release-notes.md
-          files: dist/essa-wp-suite-${{ env.VERSION }}.zip
+          files: |
+            dist/essa-wp-suite-${{ env.VERSION }}.zip
+            dist/essa-wp-suite.zip
